@@ -14,9 +14,10 @@
 
             <div class="wrapper-inner">
 
-                <div class="custom-select">
+                <div class="custom-select custom-select-list">
+                    <div class="icon"><img src="source/images/icon-map.png" alt="icon"></div>
                     <div class="current-value">Одесса</div>
-                    <i class="fa fa-caret-down"></i>
+                    <div class="triangle triangle-down"></div>
                     <ul>
                         <li>Харьков</li>
                         <li>Минск</li>
@@ -36,9 +37,10 @@
                     </ul>
                 </nav>
 
-                <div class="custom-select">
+                <div class="custom-select custom-select-list">
+                    <div class="icon"><img src="source/images/icon-flag.png" alt="icon"></div>
                     <div class="current-value">Русский</div>
-                    <i class="fa fa-caret-down"></i>
+                    <div class="triangle triangle-down"></div>
                     <ul>
                         <li>Украинский</li>
                         <li class="active">Русский</li>
@@ -46,9 +48,10 @@
                     </ul>
                 </div>
 
-                <div class="custom-select">
+                <div class="custom-select custom-select-list">
+                    <div class="icon"><img src="source/images/icon-money.png" alt="icon"></div>
                     <div class="current-value">Рубли</div>
-                    <i class="fa fa-caret-down"></i>
+                    <div class="triangle triangle-down"></div>
                     <ul>
                         <li>Гривны</li>
                         <li>Доллары</li>
@@ -138,6 +141,133 @@
 
             </section>
 
+            <ul class="tabs-main">
+                <li><h2><a href="#">Снять недвижимость</a></h2></li>
+                <li><h2><a href="#">Купить недвижимость</a></h2></li>
+            </ul>
+
+            <form action="#" class="filters">
+
+                <fieldset>
+
+                    <div class="custom-select custom-select-form">
+                        <div class="current-value">Квартира</div>
+                        <div class="triangles"></div>
+                        <ul>
+                            <li class="active">Квартира</li>
+                            <li>Дом</li>
+                            <li>Койка</li>
+                            <li>Комната</li>
+                        </ul>
+                        <label><input type="text"></label>
+                    </div>
+
+                    <div class="custom-select custom-select-form">
+                        <div class="current-value">Район</div>
+                        <div class="triangles"></div>
+                        <ul>
+                            <li>Новобаварский</li>
+                            <li>Московский</li>
+                            <li>Шевченковский</li>
+                            <li>Индустриальный</li>
+                        </ul>
+                        <label><input type="text"></label>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+
+                    Количество комнат
+
+                    <input type="checkbox" id="checkbox-rooms-1" name="checkbox-rooms">
+                    <label for="checkbox-rooms-1" class="checkbox-label">1</label>
+
+                    <input type="checkbox" id="checkbox-rooms-2" name="checkbox-rooms">
+                    <label for="checkbox-rooms-2" class="checkbox-label">2</label>
+
+                    <input type="checkbox" id="checkbox-rooms-3" name="checkbox-rooms">
+                    <label for="checkbox-rooms-3" class="checkbox-label">3</label>
+
+                    <input type="checkbox" id="checkbox-rooms-4" name="checkbox-rooms">
+                    <label for="checkbox-rooms-4" class="checkbox-label">4</label>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <input type="radio" id="radio-duration-1" name="radio-duration">
+                    <label for="radio-duration-1" class="radio-label">Длительно</label>
+
+                    <input type="radio" id="radio-duration-2" name="radio-duration">
+                    <label for="radio-duration-2" class="radio-label">Посуточно</label>
+
+                </fieldset>
+
+                <fieldset>
+
+                    Цена (грн.)
+
+                    <div id="filter-price" class="filter-price"></div>
+
+                    <label><input type="text" id="filter-slider-amount"/></label>
+
+                </fieldset>
+
+                <fieldset class="additional">
+
+                    <div class="custom-select custom-select-form">
+                        <div class="current-value">Материал строения</div>
+                        <div class="triangles"></div>
+                        <ul>
+                            <li>Кирпичный</li>
+                            <li>Панельный</li>
+                            <li>Деревянный</li>
+                            <li>Земляной</li>
+                        </ul>
+                        <label><input type="text"></label>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="additional">
+
+                    <label><input type="text" placeholder="№ объявления"></label>
+
+                </fieldset>
+
+                <fieldset class="additional">
+
+                    площадь
+
+                    <label><input type="text" placeholder="50"></label>&#8195;&#8212;&#8195;<label><input type="text" placeholder="100"></label>
+
+                </fieldset>
+
+                <fieldset class="additional">
+
+                    этаж
+
+                    <label><input type="text" placeholder="5"></label>&#8195;&#8212;&#8195;<label><input type="text" placeholder="20"></label>
+
+                </fieldset>
+
+                <fieldset class="additional">
+
+                    свободно
+
+                    <label><input type="date" placeholder="20.10.2016"></label>&#8195;&#8212;&#8195;<label><input type="date" placeholder="20.12.2016"></label>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <button type="submit" class="button-orange"><span class="icon"></span>Показать варианты <span>(527)</span></button>
+
+                </fieldset>
+
+            </form>
+
             <section class="products">
 
                 <div class="products-header">
@@ -145,18 +275,18 @@
                     <div class="sort-filter">
 
                         сортировка:
-                        <div class="custom-select">
+                        <div class="custom-select custom-select-list">
                             <div class="current-value">по цене</div>
-                            <i class="fa fa-caret-down"></i>
+                            <div class="triangle triangle-down"></div>
                             <ul>
                                 <li>от дорогих к дешевым</li>
                                 <li>от дешевых к дорогим</li>
                             </ul>
                         </div>
 
-                        <div class="custom-select">
+                        <div class="custom-select custom-select-list">
                             <div class="current-value">по дате создания</div>
-                            <i class="fa fa-caret-down"></i>
+                            <div class="triangle triangle-down"></div>
                             <ul>
                                 <li>Пункт 1</li>
                                 <li>Пункт 2</li>
