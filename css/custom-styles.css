@@ -1,0 +1,362 @@
+/**********************************************************************************************************************
+********** general
+***********************************************************************************************************************/
+
+@font-face {
+    font-family: 'PTSansBold';
+    src: url("../source/fonts/PTSansBold.woff") format("woff"), url("../source/fonts/PTSansBold.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSansRegular';
+    src: url("../source/fonts/PTSansRegular.woff") format("woff"), url("../source/fonts/PTSansRegular.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #000000;
+    font-family: 'PTSansRegular', sans-serif;
+}
+
+html, body {
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 100%;
+}
+
+a, button {
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    -webkit-appearance: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+a:active, a:focus {
+    outline: none;
+}
+
+button, button:hover, button:active {
+    outline: none;
+    border: none;
+}
+button::-moz-focus-inner {
+    outline: none;
+    border: none;
+}
+input:focus, text:focus {
+    outline: none;
+}
+input:focus::-webkit-input-placeholder {color: transparent;}
+input:focus::-moz-placeholder {color: transparent;}
+input:focus:-moz-placeholder {color: transparent;}
+input:focus:-ms-input-placeholder {color: transparent;}
+
+textarea {
+    resize: none;
+}
+
+textarea:focus::-webkit-input-placeholder {color: transparent;}
+textarea:focus::-moz-placeholder {color: transparent;}
+textarea:focus:-moz-placeholder {color: transparent;}
+textarea:focus:-ms-input-placeholder {color: transparent;}
+
+.button-orange {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #ffffff;
+    background: #fc7214;
+    font-family: 'PTSansBold', sans-serif;
+}
+.button-orange:hover {
+    background: #d46b14;
+}
+.button-orange:active {
+    -webkit-box-shadow: inset 0 0 4px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0 0 4px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+ul li, ol li {
+    display: inline-block;
+    vertical-align: middle;
+    list-style: none;
+}
+
+.image-wrap {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+img {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+.image-wrap img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 350px;
+}
+
+.wrapper-inner {
+    display: block;
+    width: 100%;
+    max-width: 1230px;
+    position: relative;
+    margin: 0 auto;
+}
+.wrapper-inner:after, .clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+section {
+    display: block;
+    margin-top: 20px;
+}
+
+.checkbox-label {
+    display: inline-block;
+    vertical-align: middle;
+}
+.checkbox-label {
+    font-family: 'PTSansBold', sans-serif;
+    color: #ffffff;
+    margin-right: 10px;
+}
+.checkbox-label:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+input:checked + .checkbox-label:before {
+    background: transparent url('../source/images/checkbox-ok.png') no-repeat center;
+}
+
+input[type='radio'], input[type='checkbox'] {
+    display: none;
+}
+
+/* custom select */
+
+.custom-select {
+    position: relative;
+    cursor: pointer;
+}
+.custom-select ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    background: #f3f3f3;
+    padding: 10px;
+    z-index: 1;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 3px -2px rgba(0, 0, 0, 0.2);
+}
+.custom-select ul li {
+    display: block;
+}
+.custom-select ul li.chosen {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.custom-select ul li:hover {
+    color: #fc7214;
+}
+.custom-select ul li.chosen:hover {
+    color: inherit;
+}
+
+.custom-select-list {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 15px;
+}
+.custom-select-list .icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 21px;
+}
+.custom-select-list .current-value {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 1.285714285714286em;
+    line-height: 1;
+}
+
+.custom-select-list .triangle {
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #000000;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+.custom-select-list.active .triangle {
+    border-top: none;
+    border-bottom: 5px solid #000000;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+/**********************************************************************************************************************
+********** header
+***********************************************************************************************************************/
+
+/* header-top */
+.header-top {
+    background: #f3f3f3;
+}
+.header-top .wrapper-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.header-top .wrapper-inner:after {
+    display: none;
+}
+.header-top .local .custom-select:first-child {
+    margin-right: 50px;
+}
+.header-top .local .current-value{
+    font-size: 1.142857142857143em;
+}
+
+nav ul li {
+    padding: 0 10px;
+}
+nav ul li a {
+    font-family: 'PTSansBold', sans-serif;
+    color: #656565;
+    font-size: 1.142857142857143em;
+    text-decoration: underline;
+}
+
+/* header-info */
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+.logo {
+    display: block;
+    width: 270px;
+}
+.header-info .promo-text {
+    display: block;
+    width: 300px;
+    text-align: justify;
+}
+.promo-text a {
+    color: #fc7214;
+}
+
+.header-info .phone-number {
+    font-size: 1.785714285714286em;
+    text-decoration: none;
+}
+.header-info .phone-number span {
+    font-size: inherit;
+    color: #fc7214;
+}
+
+.add-object {
+    padding: 15px 25px 15px 60px;
+    font-size: 1.428571428571429em;
+    position: relative;
+}
+.add-object:before {
+    content: '';
+    display: block;
+    width: 19px;
+    height: 22px;
+    background: transparent url('../source/images/icon-add-object.png') no-repeat;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 30px;
+}
+
+/* header-bottom */
+.header-bottom .categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    float: left;
+    width: calc(100% - 275px);
+}
+.header-bottom .categories li {
+    position: relative;
+    padding-right: 5px;
+}
+.header-bottom .categories li a {
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 1.4em;
+    line-height: 1;
+}
+.header-bottom .categories li span {
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 0.7em;
+    color: #94999b;
+    position: absolute;
+    top: 3px;
+    left: 100%;
+}
+.header-bottom .make-application {
+    display: block;
+    float: right;
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 1.4em;
+    color: #fc7214;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.header-bottom .make-application:hover {
+    text-decoration: none;
+}
+.header-bottom .make-application:active {
+    color: #d46c14;
+}
