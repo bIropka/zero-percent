@@ -178,9 +178,10 @@ section {
     border-radius: 3px;
     margin-right: 10px;
     cursor: pointer;
+    background: #ffffff;
 }
 input:checked + .checkbox-label:before {
-    background: transparent url('../source/images/checkbox-ok.png') no-repeat center;
+    background: #ffffff url('../source/images/checkbox-ok.png') no-repeat center;
 }
 
 input[type='radio'], input[type='checkbox'] {
@@ -201,10 +202,12 @@ input[type='radio'], input[type='checkbox'] {
     display: none;
     position: absolute;
     top: 100%;
+    z-index: 1;
+}
+.custom-select-list ul {
     left: 15px;
     background: #f3f3f3;
     padding: 10px;
-    z-index: 1;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -260,6 +263,9 @@ input[type='radio'], input[type='checkbox'] {
     border-bottom: 5px solid #000000;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
+}
+.custom-select label {
+    display: none;
 }
 
 /**********************************************************************************************************************
@@ -475,16 +481,411 @@ footer[role='contentinfo'] .promo-text {
 ********** main page
 ***********************************************************************************************************************/
 
-.banner .slick-arrow {
+.banner {
+    display: block;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    text-align: center;
+}
+.banner .slick-track {
+    position: static;
+}
+.banner .slide {
+    width: 100%;
+    height: 390px;
+    position: relative;
+    overflow: hidden;
+}
+.banner .slide img {
+    display: block;
+    width: 1920px;
+    height: 100%;
     position: absolute;
+    top: 0;
+    left: calc(50% - 960px);
+}
+.banner .slider-controls {
+    display: block;
+    width: 100%;
+    height: 58px;
+    max-width: 1230px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.banner-control {
+    display: block;
+    width: 58px;
+    height: 58px;
+    background: transparent url('../source/images/sprite-slider.png') no-repeat left center;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 0.6;
+    cursor: pointer;
 
 }
-.banner .slick-prev {
+.banner-control-left {
+    left: 0;
+}
+.banner-control-right {
+    background-position: right center;
+    right: 0;
+}
+.banner-control:hover {
+    opacity: 1;
+}
+
+.banner .tagline {
+    display: block;
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 3em;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+    line-height: 1;
+}
+.banner .note {
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 120px;
+}
+.banner .note p {
+    display: inline-block;
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 1.428571428571429em;
+    color: #ffffff;
+    background: #fc7214;
+    padding: 10px 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.banner .slick-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 73px;
+    font-size: 0;
+}
+.banner .slick-dots li {
+    padding: 8px 2px;
+    background: #f8f8f8;
+}
+.banner .slick-dots li:first-child {
+    padding-left: 10px;
+    -webkit-border-radius: 3px 0 0 0;
+    -moz-border-radius: 3px 0 0 0;
+    border-radius: 3px 0 0 0;
+}
+.banner .slick-dots li:last-child {
+    padding-right: 10px;
+    -webkit-border-radius: 0 3px 0 0;
+    -moz-border-radius: 0 3px 0 0;
+    border-radius: 0 3px 0 0;
+}
+.banner .slick-dots li button {
+    display: block;
+    width: 15px;
+    height: 15px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: #32373b;
+    font-size: 0;
+    color: transparent;
+}
+.banner .slick-dots li.slick-active button {
+    background: #fc7214;
+}
+
+/* tabs main */
+
+.tabs-main {
+    text-align: center;
+    margin: 25px 0 20px;
+}
+.tabs-main a {
+    font-family: inherit;
+    font-size: inherit;
+    color: #34393d;
+    text-decoration: none;
+    border-bottom: 2px dashed transparent;
+    margin: 0 10px;
+}
+.tabs-main a:hover {
+    color: #5f6569;
+}
+.tabs-main a.active {
+    color: #fc7214;
+    border-bottom: 2px dashed #fc7214;
+}
+
+/* filters */
+
+.filters {
+    background: #32373b url('../source/images/background-filter.jpg') no-repeat;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 35px 40px;
+    position: relative;
+}
+.filters fieldset {
+    display: block;
+    float: left;
+    border: none;
+    margin: 15px 0;
+}
+.custom-select-form {
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 12px 30px 12px 20px;
+}
+.custom-select-form .current-value {
+    font-family: 'PTSansBold', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.custom-select-form .triangles {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+}
+.custom-select-form .triangles:before, .custom-select-form .triangles:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: absolute;
+    right: 0;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.custom-select-form .triangles:before {
+    border-bottom: 5px solid #000000;
+    top: 10px;
+}
+.custom-select-form .triangles:after {
+    border-top: 5px solid #000000;
+    bottom: 10px;
+}
+.custom-select-form.active .triangles:before {
+    top: 15px;
+}
+.custom-select-form.active .triangles:after {
+    bottom: 15px;
+}
+.custom-select-form ul {
+    background: #ffffff;
+    width: 100%;
+    left: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 10px 0;
+}
+.custom-select-form ul li {
+    padding: 5px 30px 5px 20px;
+}
+.filter-location {
+    width: 55%;
+}
+.filter-location .custom-select-form {
+    display: block;
+    width: 47.5%;
+    float: left;
+}
+.filter-location .custom-select-form:last-of-type {
+    margin-left: 5%;
+}
+
+.filter-rooms {
+    width: 45%;
+    text-transform: uppercase;
+    color: #fc7214;
+    font-family: 'PTSansBold', sans-serif;
+    text-align: right;
+    line-height: 40px;
+}
+.filter-rooms .checkbox-label:before {
+    background: #ffffff;
+    margin-left: 10px;
+}
+
+.filter-duration {
+    width: 22%;
+}
+.filter-duration .radio-label {
+    display: inline-block;
+    height: 43px;
+    line-height: 39px;
+    text-transform: uppercase;
+    font-family: 'PTSansBold', sans-serif;
+    color: #ffffff;
+    padding: 0 15px;
+    border: 2px solid transparent;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.filter-duration input:checked + .radio-label {
+    color: #fc7214;
+    border: 2px solid #fc7214;
+}
+.filter-cost {
+    width: 36%;
+    text-transform: uppercase;
+    font-family: 'PTSansBold', sans-serif;
+    color: #ffffff;
+    line-height: 43px;
+}
+.filter-slider {
+    display: inline-block;
+    width: 270px;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.filter-cost label {
+    display: none;
+}
+
+.filter-material {
+    width: 42%;
+}
+.filter-number, .filter-square, .filter-floor, .filter-dates {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'PTSansBold', sans-serif;
+}
+.filter-square, .filter-floor {
+    padding-left: 25px;
+}
+.filter-number label, .filter-square label, .filter-floor label, .filter-dates label {
+    display: inline-block;
+    vertical-align: middle;
+}
+.filter-square label:first-of-type, .filter-floor label:first-of-type, .filter-dates label:first-of-type {
+    margin-left: 15px;
+}
+.filter-number input, .filter-square input, .filter-floor input, .filter-dates input {
+    display: block;
+    height: 43px;
+    line-height: 43px;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #000000;
+}
+.filter-number input {
+    padding: 0 20px;
+}
+.filter-square input, .filter-floor input, .filter-dates input {
+    text-align: center;
+}
+
+.filters input::-webkit-input-placeholder {font-family: 'PTSansBold', sans-serif; text-transform: uppercase; color: #000000;}
+.filters input::-moz-placeholder {font-family: 'PTSansBold', sans-serif; text-transform: uppercase; color: #000000;}
+.filters input:-moz-placeholder {font-family: 'PTSansBold', sans-serif; text-transform: uppercase; color: #000000;}
+.filters input:-ms-input-placeholder {font-family: 'PTSansBold', sans-serif; text-transform: uppercase; color: #000000;}
+
+.filters input:focus::-webkit-input-placeholder {color: transparent;}
+.filters input:focus::-moz-placeholder {color: transparent;}
+.filters input:focus:-moz-placeholder {color: transparent;}
+.filters input:focus:-ms-input-placeholder {color: transparent;}
+
+.filter-controls {
+    position: absolute;
+    bottom: 35px;
+    right: 40px;
+    width: 39.5%;
+}
+.filters button[type='submit'], .more-filters {
+    display: inline-block;
+    vertical-align: middle;
+    height: 43px;
+    line-height: 43px;
+}
+.filters button[type='submit'] {
+    font-size: 1.428571428571429em;
+    padding: 0 15px 0 50px;
+    position: relative;
+    margin-right: 20px;
+}
+.filters button[type='submit']:before {
+    content: '';
+    display: block;
+    width: 21px;
+    height: 22px;
+    background: transparent url('../source/images/icon-filters-submit.png') no-repeat;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+}
+.filters button[type='submit'] span {
+    color: #ffc784;
+    font-size: inherit;
+}
+.more-filters span {
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 1.142857142857143em;
+    color: #ffffff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.more-filters .full {
+    display: none;
+}
+.filters.active .more-filters .full {
+    display: inline-block;
+}
+.filters.active .more-filters .short {
+    display: none;
+}
+.more-filters span:hover {
+    text-decoration: none;
+}
+.filters .additional {
+    display: none;
+}
+.filters.active .additional {
+    display: block;
+}
+
+/* products header */
+.products-header {
 
 }
-.banner .slick-next {
+
+/* products list */
+
+.products-list {
 
 }
+
+    /* news */
 
 .news {
     background: #ffffff;
@@ -554,3 +955,4 @@ footer[role='contentinfo'] .promo-text {
     bottom: -20px;
     outline: 10px solid #ffffff;
 }
+

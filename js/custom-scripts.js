@@ -4,6 +4,10 @@ $(document).ready(function () {
      ******* init scripts
      ******************************************************************************************************************/
 
+    setTimeout(function() {
+        $('.banner').animate({opacity: 1}, 500);
+    }, 500);
+
     $(document).click(function(event) {
         if (!$(event.target).closest(".custom-select").length) {
             $('.custom-select').removeClass('active');
@@ -78,6 +82,10 @@ $(document).ready(function () {
      ******* clicks scripts
      ******************************************************************************************************************/
 
+    $('.more-filters').click(function() {
+        $(this).parents('form').toggleClass('active');
+    });
+    
     $('.window').click(function (event) {
         $target = $(event.target);
         if (!$target.closest($('form')).length) $('.window').fadeOut();
@@ -110,8 +118,25 @@ $(document).ready(function () {
      ******* slider scripts
      ******************************************************************************************************************/
 
+
+
     $('.banner .slider').slick({
-        
+        appendArrows: '.banner-control',
+        prevArrow: '.banner-control-left',
+        nextArrow: '.banner-control-right',
+        dots: true
+
+    });
+
+    /******************************************************************************************************************
+     ******* filter-slider scripts
+     ******************************************************************************************************************/
+
+    $('.filter-slider').rangeSlider({
+        bounds:{min: 0, max: 2000},
+        defaultValues:{min: 150 , max: 750},
+        step: 10
+
     });
 
 

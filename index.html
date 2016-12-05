@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
-    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/iThing-min.css"/>
     <link rel="stylesheet" href="css/custom-styles.css">
 </head>
 <body>
@@ -109,15 +111,20 @@
 
     <section class="banner">
 
+        <div class="slider-controls">
+            <div class="banner-control banner-control-left"></div>
+            <div class="banner-control banner-control-right"></div>
+        </div>
+
         <div class="slider">
 
             <div class="slide">
 
                 <img src="source/images/banner-slide-1.png" alt="banner">
 
-                <div class="tagline">Снять квартиру длительно и посуточно теперь за 0% комиссии!</div>
+                <div class="tagline">Снять квартиру длительно и посуточно<br> теперь за 0% комиссии!</div>
 
-                <div class="note">Все варианты проверены! Услуги риэлтора!</div>
+                <div class="note"><p>Все варианты проверены! Услуги риэлтора!</p></div>
 
             </div>
 
@@ -125,9 +132,9 @@
 
                 <img src="source/images/banner-slide-2.png" alt="banner">
 
-                <div class="tagline">Купить квартиру или дом теперь можно за 0% комиссии!</div>
+                <div class="tagline">Купить квартиру или дом<br> теперь можно за 0% комиссии!</div>
 
-                <div class="note">Все варианты проверены! Услуги риэлтора!</div>
+                <div class="note"><p>Все варианты проверены! Услуги риэлтора!</p></div>
 
             </div>
 
@@ -135,9 +142,9 @@
 
                 <img src="source/images/banner-slide-3.png" alt="banner">
 
-                <div class="tagline">Хотите быстро сдать или продать жилье? Теперь это просто!</div>
+                <div class="tagline">Хотите быстро сдать или продать жилье?<br> Теперь это просто!</div>
 
-                <div class="note">Вам к нам! Услуги риэлтора!</div>
+                <div class="note"><p>Вам к нам! Услуги риэлтора!</p></div>
 
             </div>
 
@@ -151,18 +158,18 @@
 
             <ul class="tabs-main">
                 <li><h2><a href="#">Снять недвижимость</a></h2></li>
-                <li><h2><a href="#">Купить недвижимость</a></h2></li>
+                <li><h2><a href="#" class="active">Купить недвижимость</a></h2></li>
             </ul>
 
-            <form action="#" class="filters">
+            <form action="#" class="filters clearfix">
 
-                <fieldset>
+                <fieldset class="filter-location clearfix">
 
                     <div class="custom-select custom-select-form">
                         <div class="current-value">Квартира</div>
                         <div class="triangles"></div>
                         <ul>
-                            <li class="active">Квартира</li>
+                            <li class="chosen">Квартира</li>
                             <li>Дом</li>
                             <li>Койка</li>
                             <li>Комната</li>
@@ -184,7 +191,7 @@
 
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="filter-rooms">
 
                     Количество комнат
 
@@ -202,27 +209,27 @@
 
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="filter-duration">
 
                     <input type="radio" id="radio-duration-1" name="radio-duration">
                     <label for="radio-duration-1" class="radio-label">Длительно</label>
 
-                    <input type="radio" id="radio-duration-2" name="radio-duration">
+                    <input type="radio" id="radio-duration-2" name="radio-duration" checked>
                     <label for="radio-duration-2" class="radio-label">Посуточно</label>
 
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="filter-cost">
 
                     Цена (грн.)
 
-                    <div id="filter-price" class="filter-price"></div>
+                    <div id="filter-slider" class="filter-slider"></div>
 
                     <label><input type="text" id="filter-slider-amount"/></label>
 
                 </fieldset>
 
-                <fieldset class="additional">
+                <fieldset class="filter-material additional">
 
                     <div class="custom-select custom-select-form">
                         <div class="current-value">Материал строения</div>
@@ -238,13 +245,13 @@
 
                 </fieldset>
 
-                <fieldset class="additional">
+                <fieldset class="filter-number additional">
 
                     <label><input type="text" placeholder="№ объявления"></label>
 
                 </fieldset>
 
-                <fieldset class="additional">
+                <fieldset class="filter-square additional">
 
                     площадь
 
@@ -252,7 +259,7 @@
 
                 </fieldset>
 
-                <fieldset class="additional">
+                <fieldset class="filter-floor additional">
 
                     этаж
 
@@ -260,17 +267,19 @@
 
                 </fieldset>
 
-                <fieldset class="additional">
+                <fieldset class="filter-dates additional">
 
                     свободно
 
-                    <label><input type="date" placeholder="20.10.2016"></label>&#8195;&#8212;&#8195;<label><input type="date" placeholder="20.12.2016"></label>
+                    <label><input type="text" placeholder="20.10.2016"></label>&#8195;&#8212;&#8195;<label><input type="text" placeholder="20.12.2016"></label>
 
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="filter-controls">
 
                     <button type="submit" class="button-orange"><span class="icon"></span>Показать варианты <span>(527)</span></button>
+
+                    <div class="more-filters"><span class="short">Расширенный поиск</span><span class="full">Обычный поиск</span></div>
 
                 </fieldset>
 
@@ -480,6 +489,8 @@
 </div>
 
 <script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jQRangeSlider-min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/custom-scripts.js"></script>
 </body>
