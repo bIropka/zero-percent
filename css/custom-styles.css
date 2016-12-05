@@ -348,15 +348,101 @@ nav ul li a {
 .header-bottom .make-application {
     display: block;
     float: right;
-    font-family: 'PTSansBold', sans-serif;
     font-size: 1.4em;
+}
+.make-application {
+    font-family: 'PTSansBold', sans-serif;
     color: #fc7214;
     text-decoration: underline;
     cursor: pointer;
 }
-.header-bottom .make-application:hover {
+.make-application:hover {
     text-decoration: none;
 }
-.header-bottom .make-application:active {
+.make-application:active {
     color: #d46c14;
+}
+
+/**********************************************************************************************************************
+********** footer
+***********************************************************************************************************************/
+
+footer[role='contentinfo'] {
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #f3f3f3 url('../source/images/background-footer.png') no-repeat 80% bottom;
+    background-size: auto 110%;
+    padding: 35px 0;
+}
+.footer-column {
+    display: block;
+    width: 430px;
+    float: left;
+}
+
+.copyrights {
+    font-family: 'PTSansBold', sans-serif;
+    color: #32373b;
+    margin-bottom: 25px;
+}
+
+.footer-contacts li, .footer-contacts li a {
+    color: #32373b;
+}
+.footer-contacts li .phone-number {
+    text-decoration: none;
+}
+
+footer[role='contentinfo'] .social-links {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+.social-links li {
+    margin-right: 25px;
+}
+.social-links li:last-child {
+    margin-right: 0;
+}
+.social-links li a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+}
+.social-links li a img {
+    -webkit-filter: grayscale(75%);
+    filter: grayscale(75%);
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -ms-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+}
+.social-links li a:hover img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+footer[role='contentinfo'] .categories li {
+    display: block;
+    margin-bottom: 10px;
+}
+footer[role='contentinfo'] .categories li a {
+    font-family: 'PTSansBold', sans-serif;
+    color: #32373b;
+    font-size: 1.214285714285714em;
+    line-height: 1.2;
+}
+footer[role='contentinfo'] .make-application {
+    font-size: 1.214285714285714em;
+}
+
+footer[role='contentinfo'] .promo-text {
+    display: block;
+    width: 100%;
+    float: left;
+    margin-top: 40px;
 }
