@@ -287,7 +287,7 @@
 
             <section class="products">
 
-                <div class="products-header">
+                <div class="products-header clearfix">
 
                     <div class="sort-filter">
 
@@ -316,28 +316,23 @@
                     <div class="view-filter">
 
                         вид:
-                        <div class="view-filter-grid">
-                            <img src="source/images/view-filter-grid.png" alt="grid">
-                        </div>
+                        <div class="view-filter-grid active"></div>
 
-                        <div class="view-filter-lines">
-                            <img src="source/images/view-filter-lines.png" alt="lines">
-                        </div>
+                        <div class="view-filter-lines"></div>
 
-                        <div class="view-filter-map">
-                            <img src="source/images/view-filter-map.png" alt="map">
-                        </div>
+                        <div class="view-filter-map"></div>
 
                     </div>
 
                 </div>
 
-                <ul class="products-list layout-grid">
+                <ul class="products-list clearfix">
 
                     <li class="product-card">
 
+                        <div class="product-mark best-price">Хорошая цена</div>
+
                         <div class="image-wrap">
-                            <div class="product-mark best-price">Хорошая цена</div>
                             <img src="source/images/product-1.jpg" alt="product">
                         </div>
 
@@ -349,30 +344,319 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li></li>
-                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
                         </ul>
 
-                        <div class="reviews-amount"><a href="#"></a></div>
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
 
-                        <div class="product-cost"><span></span></div>
+                        <div class="product-cost">250<span> грн./мес.</span></div>
 
-                        <table>
-                            <tr>
-                                <td>Общая площадь</td>
-                                <td><100 кв. м/td>
-                            </tr>
-                            <tr>
-                                <td>Спальные места</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <td>Тип сделки</td>
-                                <td>Аренда</td>
-                            </tr>
-                        </table>
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Спальные места</div>
+                                <div class="value">2</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Аренда</div>
+                            </li>
+                        </ul>
 
-                        <button><span class="icon"></span>Добавить к сравнению</button>
+                        <button>Добавить к сравнению</button>
+
+                    </li>
+
+                    <li class="product-card">
+
+                        <div class="image-wrap">
+                            <img src="source/images/product-2.jpg" alt="product">
+                        </div>
+
+                        <h3><a href="#">2 комнатная квартира</a></h3>
+
+                        <p>Район Черемушки, ул. л. Шмидта, заброшенное строение в углу</p>
+
+                        <ul class="rate">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
+                        </ul>
+
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                        <div class="product-cost">75000<span> грн./мес.</span></div>
+
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Продажа</div>
+                            </li>
+                        </ul>
+
+                        <button>Добавить к сравнению</button>
+
+                    </li>
+
+                    <li class="product-card">
+
+                        <div class="product-mark best-urgently">Срочное</div>
+
+                        <div class="image-wrap">
+                            <img src="source/images/product-1.jpg" alt="product">
+                        </div>
+
+                        <h3><a href="#">1 комнатная квартира</a></h3>
+
+                        <p>Район Черемушки, ул. л. Шмидта</p>
+
+                        <ul class="rate">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
+                        </ul>
+
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                        <div class="product-cost">250<span> грн./мес.</span></div>
+
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Спальные места</div>
+                                <div class="value">2</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Аренда</div>
+                            </li>
+                        </ul>
+
+                        <button>Добавить к сравнению</button>
+
+                    </li>
+
+                    <li class="product-card">
+
+                        <div class="product-mark best-popular">Популярное</div>
+
+                        <div class="image-wrap">
+                            <img src="source/images/product-1.jpg" alt="product">
+                        </div>
+
+                        <h3><a href="#">3 комнатная квартира</a></h3>
+
+                        <p>Район Черемушки, ул. л. Шмидта</p>
+
+                        <ul class="rate">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
+                        </ul>
+
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                        <div class="product-cost">250<span> грн./мес.</span></div>
+
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Спальные места</div>
+                                <div class="value">2</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Аренда</div>
+                            </li>
+                        </ul>
+
+                        <button>Добавить к сравнению</button>
+
+                    </li>
+
+                    <li class="product-card">
+
+                        <div class="product-mark best-price">Хорошая цена</div>
+
+                        <div class="image-wrap">
+                            <img src="source/images/product-1.jpg" alt="product">
+                        </div>
+
+                        <h3><a href="#">1 комнатная квартира</a></h3>
+
+                        <p>Район Черемушки, ул. л. Шмидта</p>
+
+                        <ul class="rate">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
+                        </ul>
+
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                        <div class="product-cost">250<span> грн./мес.</span></div>
+
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Спальные места</div>
+                                <div class="value">2</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Аренда</div>
+                            </li>
+                        </ul>
+
+                        <button>Добавить к сравнению</button>
+
+                    </li>
+
+                    <li class="product-card">
+
+                        <div class="image-wrap">
+                            <img src="source/images/product-2.jpg" alt="product">
+                        </div>
+
+                        <h3><a href="#">2 комнатная квартира</a></h3>
+
+                        <p>Район Черемушки, ул. л. Шмидта, заброшенное строение в углу</p>
+
+                        <ul class="rate">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
+                        </ul>
+
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                        <div class="product-cost">75000<span> грн./мес.</span></div>
+
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Продажа</div>
+                            </li>
+                        </ul>
+
+                        <button>Добавить к сравнению</button>
+
+                    </li>
+
+                    <li class="product-card">
+
+                        <div class="product-mark best-urgently">Срочное</div>
+
+                        <div class="image-wrap">
+                            <img src="source/images/product-1.jpg" alt="product">
+                        </div>
+
+                        <h3><a href="#">1 комнатная квартира</a></h3>
+
+                        <p>Район Черемушки, ул. л. Шмидта</p>
+
+                        <ul class="rate">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
+                        </ul>
+
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                        <div class="product-cost">250<span> грн./мес.</span></div>
+
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Спальные места</div>
+                                <div class="value">2</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Аренда</div>
+                            </li>
+                        </ul>
+
+                        <button>Добавить к сравнению</button>
+
+                    </li>
+
+                    <li class="product-card">
+
+                        <div class="product-mark best-popular">Популярное</div>
+
+                        <div class="image-wrap">
+                            <img src="source/images/product-1.jpg" alt="product">
+                        </div>
+
+                        <h3><a href="#">3 комнатная квартира</a></h3>
+
+                        <p>Район Черемушки, ул. л. Шмидта</p>
+
+                        <ul class="rate">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="empty-star"></li>
+                            <li class="empty-star"></li>
+                        </ul>
+
+                        <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                        <div class="product-cost">250<span> грн./мес.</span></div>
+
+                        <ul class="product-details">
+                            <li class="clearfix">
+                                <div class="parameter">Общая площадь</div>
+                                <div class="value">100 кв.м</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Спальные места</div>
+                                <div class="value">2</div>
+                            </li>
+                            <li class="clearfix">
+                                <div class="parameter">Тип сделки</div>
+                                <div class="value">Аренда</div>
+                            </li>
+                        </ul>
+
+                        <button>Добавить к сравнению</button>
 
                     </li>
 
@@ -380,14 +664,14 @@
 
                 <div class="pagination">
                     страницы:
-                    <ul>
+                    <ul class="clearfix">
                         <li><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
                         <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
+                        <li><a href="#" class="active">7</a></li>
                         <li><a href="#">8</a></li>
                         <li><a href="#">9</a></li>
                         <li><a href="#">10</a></li>

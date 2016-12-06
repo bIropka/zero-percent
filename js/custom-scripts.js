@@ -85,6 +85,11 @@ $(document).ready(function () {
     $('.more-filters').click(function() {
         $(this).parents('form').toggleClass('active');
     });
+
+    $('.view-filter div').click(function() {
+        $('.view-filter .active').removeClass('active');
+        $(this).addClass('active');
+    });
     
     $('.window').click(function (event) {
         $target = $(event.target);
