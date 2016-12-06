@@ -132,11 +132,20 @@ $(document).ready(function () {
      ******* filter-slider scripts
      ******************************************************************************************************************/
 
-    $('.filter-slider').rangeSlider({
-        bounds:{min: 0, max: 2000},
-        defaultValues:{min: 150 , max: 750},
-        step: 10
+    var defaultMin = 150, defaultMax = 700;
 
+    $('.filter-slider').rangeSlider({
+        bounds:{min: 0, max: 1500},
+        defaultValues:{min: defaultMin , max: defaultMax},
+        step: 10
+    });
+
+    $('.ui-rangeSlider-leftLabel .ui-rangeSlider-label-inner').html(defaultMin);
+    $('.ui-rangeSlider-rightLabel .ui-rangeSlider-label-inner').html(defaultMax);
+
+    $(".filter-slider").bind("valuesChanging", function(e, data){
+        $('.ui-rangeSlider-leftLabel .ui-rangeSlider-label-inner').html(data.values.min);
+        $('.ui-rangeSlider-rightLabel .ui-rangeSlider-label-inner').html(data.values.max);
     });
 
 
