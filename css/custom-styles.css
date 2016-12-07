@@ -737,8 +737,8 @@ footer[role='contentinfo'] .promo-text {
     content: '';
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
     position: absolute;
     right: 0;
     -webkit-transition: 0.3s;
