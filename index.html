@@ -19,19 +19,21 @@
 
             <div class="wrapper-inner">
 
-                <div class="custom-select custom-select-list">
+                <div class="custom-select header-select select-city">
                     <div class="icon"><img src="source/images/icon-map.png" alt="icon"></div>
                     <div class="current-value">Одесса</div>
                     <div class="triangle"></div>
                     <ul>
                         <li>Харьков</li>
                         <li>Минск</li>
-                        <li class="chosen">Одесса</li>
                         <li>Москва</li>
                     </ul>
                 </div>
 
                 <nav>
+
+                    <div class="mobile-links">Карта сайта</div>
+
                     <ul>
                         <li><a href="#">О компании</a></li>
                         <li><a href="#">Услуги</a></li>
@@ -44,25 +46,27 @@
 
                 <div class="local">
 
-                    <div class="custom-select custom-select-list">
+                    <div class="custom-select header-select select-lang">
                         <div class="icon"><img src="source/images/icon-flag.png" alt="icon"></div>
                         <div class="current-value">Русский</div>
                         <div class="triangle"></div>
                         <ul>
-                            <li>Украинский</li>
-                            <li class="chosen">Русский</li>
                             <li>Английский</li>
+                            <li>Украинский</li>
+                            <li>Немецкий</li>
+                            <li>Испанский</li>
+                            <li>Французский</li>
+                            
                         </ul>
                     </div>
 
-                    <div class="custom-select custom-select-list">
+                    <div class="custom-select header-select select-currency">
                         <div class="icon"><img src="source/images/icon-money.png" alt="icon"></div>
                         <div class="current-value">Рубли</div>
                         <div class="triangle"></div>
                         <ul>
                             <li>Гривны</li>
                             <li>Доллары</li>
-                            <li class="chosen">Рубли</li>
                             <li>Евро</li>
                         </ul>
                     </div>
@@ -92,6 +96,8 @@
             </div>
 
             <div class="header-bottom clearfix">
+
+                <div class="burger"></div>
 
                 <ul class="categories">
                     <li><a href="#">Вторичное жилье</a><span class="products-amount">2757</span></li>
@@ -193,7 +199,7 @@
 
                 <fieldset class="filter-rooms">
 
-                    Количество комнат
+                    Количество комнат<br>
 
                     <input type="checkbox" id="checkbox-rooms-1" name="checkbox-rooms">
                     <label for="checkbox-rooms-1" class="checkbox-label">1</label>
@@ -221,7 +227,7 @@
 
                 <fieldset class="filter-cost">
 
-                    Цена (грн.)
+                    Цена (грн.)<br>
 
                     <div id="filter-slider" class="filter-slider"></div>
 
@@ -253,7 +259,7 @@
 
                 <fieldset class="filter-square additional">
 
-                    площадь
+                    площадь<br>
 
                     <label><input type="text" placeholder="50"></label>&#8195;&#8212;&#8195;<label><input type="text" placeholder="100"></label>
 
@@ -261,7 +267,7 @@
 
                 <fieldset class="filter-floor additional">
 
-                    этаж
+                    этаж<br>
 
                     <label><input type="text" placeholder="5"></label>&#8195;&#8212;&#8195;<label><input type="text" placeholder="20"></label>
 
@@ -269,7 +275,7 @@
 
                 <fieldset class="filter-dates additional">
 
-                    свободно
+                    свободно<br>
 
                     <label><input type="text" placeholder="20.10.2016"></label>&#8195;&#8212;&#8195;<label><input type="text" placeholder="20.12.2016"></label>
 
@@ -285,48 +291,48 @@
 
             </form>
 
-            <section class="products">
+            <section class="products-header clearfix">
 
-                <div class="products-header clearfix">
+                <div class="sort-filter">
 
-                    <div class="sort-filter">
-
-                        сортировка:
-                        <div class="custom-select custom-select-list">
-                            <div class="current-value">по цене</div>
-                            <div class="triangle triangle-down"></div>
-                            <ul>
-                                <li>от дорогих к дешевым</li>
-                                <li>от дешевых к дорогим</li>
-                            </ul>
-                        </div>
-
-                        <div class="custom-select custom-select-list">
-                            <div class="current-value">по дате создания</div>
-                            <div class="triangle triangle-down"></div>
-                            <ul>
-                                <li>Пункт 1</li>
-                                <li>Пункт 2</li>
-                                <li>Пункт 3</li>
-                            </ul>
-                        </div>
-
+                    сортировка:
+                    <div class="custom-select custom-select-list">
+                        <div class="current-value">по цене</div>
+                        <div class="triangle triangle-down"></div>
+                        <ul>
+                            <li>от дорогих к дешевым</li>
+                            <li>от дешевых к дорогим</li>
+                        </ul>
                     </div>
 
-                    <div class="view-filter">
-
-                        вид:
-                        <div class="view-filter-grid active"></div>
-
-                        <div class="view-filter-lines"></div>
-
-                        <div class="view-filter-map"></div>
-
+                    <div class="custom-select custom-select-list">
+                        <div class="current-value">по дате создания</div>
+                        <div class="triangle triangle-down"></div>
+                        <ul>
+                            <li>Пункт 1</li>
+                            <li>Пункт 2</li>
+                            <li>Пункт 3</li>
+                        </ul>
                     </div>
 
                 </div>
 
-                <ul class="products-list clearfix">
+                <div class="view-filter">
+
+                    вид:
+                    <div class="view-filter-grid active"></div>
+
+                    <div class="view-filter-lines"></div>
+
+                    <div class="view-filter-map"></div>
+
+                </div>
+
+            </section>
+
+            <section class="products products-list active">
+
+                <ul class="clearfix">
 
                     <li class="product-card">
 
@@ -677,6 +683,163 @@
                         <li><a href="#">10</a></li>
                     </ul>
                 </div>
+
+            </section>
+
+            <section class="products products-map">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10252.908736434167!2d36.22594781826171!3d50.02583870602648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1481056056211" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            </section>
+
+            <section class="products products-table">
+
+                <table>
+                    <tr>
+                        <th>Объект</th>
+                        <th>Тип сделки</th>
+                        <th>Адрес</th>
+                        <th>Тип недвижимости</th>
+                        <th>Площадь</th>
+                        <th>Этаж</th>
+                        <th>Цена</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="image-wrap">
+                                <img src="source/images/product-1.jpg" alt="product">
+                            </div>
+                            <h3><a href="#">Ришельевская 10</a></h3>
+                        </td>
+                        <td>
+                            <p>Аренда</p>
+                        </td>
+                        <td>
+                            <p>Ришельевская, д. 10</p>
+                        </td>
+                        <td>
+                            <p>Квартира</p>
+                            <p>3 комнаты</p>
+                        </td>
+                        <td>
+                            <p>80 кв. м</p>
+                        </td>
+                        <td>
+                            <p>11/12</p>
+                        </td>
+                        <td>
+                            <p>1 500 000 грн</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="image-wrap">
+                                <img src="source/images/product-1.jpg" alt="product">
+                            </div>
+                            <h3><a href="#">Ришельевская 10</a></h3>
+                        </td>
+                        <td>
+                            <p>Аренда</p>
+                        </td>
+                        <td>
+                            <p>Ришельевская, д. 10</p>
+                        </td>
+                        <td>
+                            <p>Квартира</p>
+                            <p>3 комнаты</p>
+                        </td>
+                        <td>
+                            <p>80 кв. м</p>
+                        </td>
+                        <td>
+                            <p>11/12</p>
+                        </td>
+                        <td>
+                            <p>1 500 000 грн</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="image-wrap">
+                                <img src="source/images/product-1.jpg" alt="product">
+                            </div>
+                            <h3><a href="#">Ришельевская 10</a></h3>
+                        </td>
+                        <td>
+                            <p>Аренда</p>
+                        </td>
+                        <td>
+                            <p>Ришельевская, д. 10</p>
+                        </td>
+                        <td>
+                            <p>Квартира</p>
+                            <p>3 комнаты</p>
+                        </td>
+                        <td>
+                            <p>80 кв. м</p>
+                        </td>
+                        <td>
+                            <p>11/12</p>
+                        </td>
+                        <td>
+                            <p>1 500 000 грн</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="image-wrap">
+                                <img src="source/images/product-1.jpg" alt="product">
+                            </div>
+                            <h3><a href="#">Ришельевская 10</a></h3>
+                        </td>
+                        <td>
+                            <p>Аренда</p>
+                        </td>
+                        <td>
+                            <p>Ришельевская, д. 10</p>
+                        </td>
+                        <td>
+                            <p>Квартира</p>
+                            <p>3 комнаты</p>
+                        </td>
+                        <td>
+                            <p>80 кв. м</p>
+                        </td>
+                        <td>
+                            <p>11/12</p>
+                        </td>
+                        <td>
+                            <p>1 500 000 грн</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="image-wrap">
+                                <img src="source/images/product-1.jpg" alt="product">
+                            </div>
+                            <h3><a href="#">Ришельевская 10</a></h3>
+                        </td>
+                        <td>
+                            <p>Аренда</p>
+                        </td>
+                        <td>
+                            <p>Ришельевская, д. 10</p>
+                        </td>
+                        <td>
+                            <p>Квартира</p>
+                            <p>3 комнаты</p>
+                        </td>
+                        <td>
+                            <p>80 кв. м</p>
+                        </td>
+                        <td>
+                            <p>11/12</p>
+                        </td>
+                        <td>
+                            <p>1 500 000 грн</p>
+                        </td>
+                    </tr>
+                </table>
 
             </section>
 

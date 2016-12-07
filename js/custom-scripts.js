@@ -37,17 +37,17 @@ $(document).ready(function () {
      ******* custom select scripts
      ******************************************************************************************************************/
 
-    $('.custom-select').hover(
+    $('.custom-select').hover (
         function() {
             if ($(window).width() > '1279'){
                 $(this).addClass('active');
-                $(this).find('ul').stop().slideDown(200);
+                $(this).find('ul').stop().fadeIn(0);
             }
         },
         function() {
             if ($(window).width() > '1279'){
                 $(this).removeClass('active');
-                $(this).find('ul').stop().slideUp(200);
+                $(this).find('ul').stop().fadeOut(0);
             }
         }
     );    
@@ -55,25 +55,38 @@ $(document).ready(function () {
     $('.custom-select .current-value').click(function() {
         if ($(window).width() < '1280'){
             $('.custom-select').removeClass('active');
-            $('.custom-select').find('ul').stop().slideUp(200);
+            $('.custom-select').find('ul').stop().fadeOut(0);
             $(this).parent().toggleClass('active');
-            $(this).siblings('ul').stop().slideToggle(200);
-        }   
+            $(this).siblings('ul').stop().fadeToggle(0);
+        }
     });
 
     $('.custom-select ul li').click(function() {
+
+        var prevChoice = $(this).parents('.custom-select').find('.current-value').html();
+        var currentChoice = $(this).html();
        
-        if (!$(this).hasClass('chosen')) {
-            $('.custom-select ul li.chosen').removeClass('chosen');
-            $(this).addClass('chosen');
+        if (!$(this).parents('.custom-select').hasClass('header-select')) {
 
-            var currentChoice = $(this).html();
+            if(!$(this).hasClass('chosen')) {
+                $('.custom-select ul li.chosen').removeClass('chosen');
+                $(this).addClass('chosen');
+
+                $(this).parents('.custom-select').find('.current-value').html(currentChoice);
+
+                $(this).parents('.custom-select').find('input').attr('value', currentChoice);
+
+                $(this).parents('.custom-select').removeClass('active');
+                $(this).parents('.custom-select').find('ul').stop().fadeOut(0);
+            }
+        } else {
+
             $(this).parents('.custom-select').find('.current-value').html(currentChoice);
-
             $(this).parents('.custom-select').find('input').attr('value', currentChoice);
+            $(this).html(prevChoice);
 
             $(this).parents('.custom-select').removeClass('active');
-            $(this).parents('.custom-select').find('ul').stop().slideUp(200);
+            $(this).parents('.custom-select').find('ul').stop().fadeOut(0);
         }
         
     });
@@ -87,8 +100,30 @@ $(document).ready(function () {
     });
 
     $('.view-filter div').click(function() {
-        $('.view-filter .active').removeClass('active');
-        $(this).addClass('active');
+        if(!$(this).hasClass('active')) {
+
+            $('.view-filter .active').removeClass('active');
+            $(this).addClass('active');
+            $('.products.active').removeClass('active');
+
+            if($(this).hasClass('view-filter-grid')) {
+                $('.products-list').addClass('active');
+            } else if($(this).hasClass('view-filter-map')) {
+                $('.products-map').addClass('active');
+            } else if($(this).hasClass('view-filter-lines')) {
+                $('.products-table').addClass('active');
+            }
+        }
+    });
+
+    $('.burger').click(function() {
+        $(this).toggleClass('active');
+        $('.header-bottom .categories').stop().slideToggle(200);
+    });
+
+    $('nav .mobile-links').click(function() {
+        $(this).toggleClass('active');
+        $('nav ul').stop().slideToggle(200);
     });
     
     $('.window').click(function (event) {
