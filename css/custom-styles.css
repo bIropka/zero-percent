@@ -807,19 +807,19 @@ footer[role='contentinfo'] .promo-text {
     line-height: 39px;
     text-transform: uppercase;
     font-family: 'PTSansBold', sans-serif;
-    color: #ffffff;
     padding: 0 15px;
-    border: 2px solid transparent;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     cursor: pointer;
-}
-.filter-duration input:checked + .radio-label {
     color: #fc7214;
     border: 2px solid #fc7214;
 }
-.filter-duration input:checked + .radio-label:hover {
+.filter-duration input:checked + .radio-label {
+    color: #ffffff;
+    border: 2px solid transparent;
+}
+.filter-duration .radio-label:hover {
     border: 2px solid #ffffff;
 }
 .filter-cost {
