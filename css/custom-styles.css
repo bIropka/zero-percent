@@ -14,6 +14,12 @@
     font-weight: 300;
     font-style: normal;
 }
+@font-face {
+    font-family: 'PTSansItalic';
+    src: url("../source/fonts/PTSansItalic.woff") format("woff"), url("../source/fonts/PTSansItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
 * {
     padding: 0;
     margin: 0;
@@ -1507,6 +1513,139 @@ footer[role='contentinfo'] .promo-text {
 }
 
 /**********************************************************************************************************************
+********** modals
+***********************************************************************************************************************/
+
+.window {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    text-align: left;
+    z-index: 150;
+    overflow: auto;
+}
+
+.window form {
+    display: block;
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    background-color: #ffffff;
+    z-index: 101;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 20px 30px;
+}
+.window form .title {
+    font-family: 'PTSansBold', sans-serif;
+    color: #32373b;
+    font-size: 1.571428571428571em;
+    line-height: 1;
+}
+
+.close-window {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: transparent url('../source/images/icon-close-window.png') no-repeat;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    position: absolute;
+    top: 0;
+    right: -25px;
+}
+.close-window:hover {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.close-window:active {
+    -webkit-transform: scale(0.8) rotate(-180deg);
+    -moz-transform: scale(0.8) rotate(-180deg);
+    -ms-transform: scale(0.8) rotate(-180deg);
+    -o-transform: scale(0.8) rotate(-180deg);
+    transform: scale(0.8) rotate(-180deg);
+}
+
+.window form > label {
+    display: block;
+    width: 100%;
+    height: 43px;
+    margin-top: 20px;
+}
+.window .custom-select-form {
+    display: block;
+    width: 100%;
+    border: 1px solid #9f9f9f;
+    margin-top: 20px;
+}
+.window .custom-select-form ul {
+    border: 1px solid #9f9f9f;
+    border-top: none;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    width: calc(100% + 2px);
+    left: -1px;
+}
+.window form > label > input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #9f9f9f;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0 20px;
+}
+
+.window form > label > input::-webkit-input-placeholder {color: #000000;}
+.window form > label > input::-moz-placeholder {color: #000000;}
+.window form > label > input:-moz-placeholder {color: #000000;}
+.window form > label > input:-ms-input-placeholder {color: #000000;}
+
+.window form > label > input:focus::-webkit-input-placeholder {color: transparent;}
+.window form > label > input:focus::-moz-placeholder {color: transparent;}
+.window form > label > input:focus:-moz-placeholder {color: transparent;}
+.window form > label > input:focus:-ms-input-placeholder {color: transparent;}
+
+.window form p {
+    font-family: 'PTSansItalic', sans-serif;
+    text-align: center;
+    margin: 15px 0;
+}
+.window form .add-object {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+}
+.window form .add-object:before {
+    left: 100px;
+}
+.window form .custom-select-form.active .triangles:before {
+    top: 16px;
+}
+.window form .custom-select-form.active .triangles:after {
+    bottom: 16px;
+}
+
+/**********************************************************************************************************************
 ********** media
 ***********************************************************************************************************************/
 
@@ -1646,7 +1785,7 @@ footer[role='contentinfo'] .promo-text {
     .header-info .promo-text {
         float: left;
     }
-    .add-object {
+    .header-info .add-object {
         padding: 10px 15px 10px 40px;
         font-size: 1.2em;
         position: absolute;
@@ -1810,7 +1949,7 @@ footer[role='contentinfo'] .promo-text {
     .header-info .promo-text {
         display: none;
     }
-    .add-object {
+    .header-info .add-object {
         top: 60px;
     }
     .header-info .phone-number {
@@ -1818,6 +1957,10 @@ footer[role='contentinfo'] .promo-text {
     }
     .banner {
         display: none;
+    }
+    .close-window {
+        top: 5px;
+        right: 5px;
     }
 }
 
@@ -1887,7 +2030,7 @@ footer[role='contentinfo'] .promo-text {
     .logo {
         width: 150px;
     }
-    .add-object {
+    .header-top .add-object {
         padding: 10px 15px 10px 30px;
         font-size: 1.1em;
         top: 45px;
@@ -1923,6 +2066,15 @@ footer[role='contentinfo'] .promo-text {
     .product-card button:before {
         left: 25%;
     }
+    .window form {
+        width: 320px;
+    }
+    .window form .add-object {
+        padding-left: 20px;
+    }
+    .window form .add-object:before {
+        left: 45px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1938,6 +2090,12 @@ footer[role='contentinfo'] .promo-text {
     }
     .product-card button:before {
         left: 17%;
+    }
+    .filters button[type='submit'] {
+        padding-left: 20%;
+    }
+    .filters button[type='submit']:before {
+        left: 7%;
     }
 
 }

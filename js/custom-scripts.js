@@ -15,6 +15,9 @@ $(document).ready(function () {
         }
         if(!$(event.target).closest('.ui-rangeSlider-label-value').length && !$(event.target).closest('.ui-rangeSlider-label-inner').length) {
             $('.ui-rangeSlider-label-value').removeClass('active');
+            var min = $('.ui-rangeSlider-leftLabel .ui-rangeSlider-label-inner input').val();
+            var max = $('.ui-rangeSlider-rightLabel .ui-rangeSlider-label-inner input').val();
+            $(".filter-slider").rangeSlider("values", min, max);
         }
     });
 
@@ -127,6 +130,14 @@ $(document).ready(function () {
     $('nav .mobile-links').click(function() {
         $(this).toggleClass('active');
         $('nav ul').stop().slideToggle(200);
+    });
+
+    $('.add-object').click(function() {
+        $('.window-add-object').fadeIn();
+    });
+
+    $('.make-application').click(function() {
+        $('.window-make-application').fadeIn();
     });
     
     $('.window').click(function (event) {
