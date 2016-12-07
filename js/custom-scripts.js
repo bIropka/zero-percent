@@ -45,13 +45,13 @@ $(document).ready(function () {
 
     $('.custom-select').hover (
         function() {
-            if ($(window).width() > '1279'){
+            if ($(window).width() > '1279' && !$(this).hasClass('custom-select-form')){
                 $(this).addClass('active');
                 $(this).find('ul').stop().fadeIn(0);
             }
         },
         function() {
-            if ($(window).width() > '1279'){
+            if ($(window).width() > '1279' && !$(this).hasClass('custom-select-form')){
                 $(this).removeClass('active');
                 $(this).find('ul').stop().fadeOut(0);
             }
@@ -59,11 +59,16 @@ $(document).ready(function () {
     );    
 
     $('.custom-select .current-value').click(function() {
-        if ($(window).width() < '1280'){
-            $('.custom-select').removeClass('active');
-            $('.custom-select').find('ul').stop().fadeOut(0);
-            $(this).parent().toggleClass('active');
-            $(this).siblings('ul').stop().fadeToggle(0);
+        if ($(window).width() < '1280' || $(this).parent().hasClass('custom-select-form')){
+            if(!$(this).parent().hasClass('active')) {
+                $('.custom-select').removeClass('active');
+                $(this).parent().addClass('active');
+                $('.custom-select').find('ul').stop().fadeOut(0);
+                $(this).siblings('ul').stop().fadeIn(0);
+            } else {
+                $('.custom-select').removeClass('active');
+                $('.custom-select').find('ul').stop().fadeOut(0);
+            }
         }
     });
 
@@ -144,6 +149,10 @@ $(document).ready(function () {
         $target = $(event.target);
         if (!$target.closest($('form')).length) $('.window').fadeOut();
         if ($target.hasClass('close-window')) $('.window').fadeOut();
+    });
+    
+    $('.product-card button').click(function() {
+        $(this).addClass('added').html('В списке сравнения');
     });
     
     /******************************************************************************************************************

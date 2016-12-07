@@ -635,6 +635,7 @@ footer[role='contentinfo'] .promo-text {
 }
 .banner .slick-dots li {
     padding: 8px 2px;
+    margin-left: -1px;
     background: #f8f8f8;
 }
 .banner .slick-dots li:first-child {
@@ -770,6 +771,7 @@ footer[role='contentinfo'] .promo-text {
 .custom-select-form ul {
     background: #ffffff;
     width: 100%;
+    top: 42px;
     left: 0;
     -webkit-border-radius: 0 0 3px 3px;
     -moz-border-radius: 0 0 3px 3px;
@@ -828,6 +830,9 @@ footer[role='contentinfo'] .promo-text {
 .filter-duration .radio-label:hover {
     border: 2px solid #ffffff;
 }
+.filters .filter-cost-mobile {
+    display: none;
+}
 .filter-cost {
     width: 36%;
     text-transform: uppercase;
@@ -848,7 +853,7 @@ footer[role='contentinfo'] .promo-text {
 .filter-material {
     width: 42%;
 }
-.filter-number, .filter-square, .filter-floor, .filter-dates {
+.filter-cost-mobile, .filter-number, .filter-square, .filter-floor, .filter-dates {
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'PTSansBold', sans-serif;
@@ -856,14 +861,21 @@ footer[role='contentinfo'] .promo-text {
 .filter-square, .filter-floor {
     padding-left: 25px;
 }
-.filter-number label, .filter-square label, .filter-floor label, .filter-dates label {
+.filter-square span {
+    color: inherit;
+}
+.filter-square sup {
+    color: inherit;
+    font-size: 0.9em;
+}
+.filter-cost-mobile label, .filter-number label, .filter-square label, .filter-floor label, .filter-dates label {
     display: inline-block;
     vertical-align: middle;
 }
-.filter-square label:first-of-type, .filter-floor label:first-of-type, .filter-dates label:first-of-type {
+.filter-cost-mobile label:first-of-type, .filter-square label:first-of-type, .filter-floor label:first-of-type, .filter-dates label:first-of-type {
     margin-left: 15px;
 }
-.filter-number input, .filter-square input, .filter-floor input, .filter-dates input {
+.filter-cost-mobile input, .filter-number input, .filter-square input, .filter-floor input, .filter-dates input {
     display: block;
     height: 43px;
     line-height: 43px;
@@ -876,7 +888,7 @@ footer[role='contentinfo'] .promo-text {
 .filter-number input {
     padding: 0 20px;
 }
-.filter-square input, .filter-floor input, .filter-dates input {
+.filter-cost-mobile input, .filter-square input, .filter-floor input, .filter-dates input {
     text-align: center;
 }
 
@@ -1320,6 +1332,17 @@ footer[role='contentinfo'] .promo-text {
 .product-card button:active:before {
     left: 30px;
 }
+.product-card button.added {
+    background: #ed711d;
+    border: 2px solid #ed711d;
+    padding-left: 0;
+    padding-right: 0;
+    color: #ffffff;
+    text-align: center;
+}
+.product-card button.added:before {
+    display: none;
+}
 
 .pagination {
     display: block;
@@ -1692,7 +1715,7 @@ footer[role='contentinfo'] .promo-text {
         width: 350px;
     }
     .filter-square input, .filter-floor input, .filter-dates input {
-        width: 100px;
+        width: 90px;
     }
     .filter-controls {
         width: 46%;
@@ -1826,7 +1849,7 @@ footer[role='contentinfo'] .promo-text {
     .filter-number label, .filter-number input {
         width: 100%;
     }
-    .filter-square, .filter-floor, .filter-dates {
+    .filter-cost-mobile, .filter-square, .filter-floor, .filter-dates {
         width: 50%;
         padding: 0;
     }
@@ -1843,13 +1866,16 @@ footer[role='contentinfo'] .promo-text {
     .products-map {
         height: 400px;
     }
+    .filter-cost-mobile input, .filter-square input, .filter-floor input, .filter-dates input {
+        width: 80px;
+    }
 }
 
 @media (max-width: 768px) {
     .filter-cost, .filter-duration {
         width: 100%;
     }
-    .filter-square, .filter-floor, .filter-dates {
+    .filter-cost-mobile, .filter-square, .filter-floor, .filter-dates {
         width: 100%;
         text-align: right;
         max-width: 320px;
@@ -1962,6 +1988,12 @@ footer[role='contentinfo'] .promo-text {
         top: 5px;
         right: 5px;
     }
+    .filters .filter-cost {
+        display: none;
+    }
+    .filters .filter-cost-mobile {
+        display: block;
+    }
 }
 
 
@@ -2053,7 +2085,7 @@ footer[role='contentinfo'] .promo-text {
     .filters fieldset br {
         display: block;
     }
-    .filter-square, .filter-floor, .filter-dates {
+    .filter-cost-mobile, .filter-square, .filter-floor, .filter-dates {
         text-align: left;
     }
     .filter-slider {
@@ -2075,10 +2107,14 @@ footer[role='contentinfo'] .promo-text {
     .window form .add-object:before {
         left: 45px;
     }
+    .filter-cost-mobile label, .filter-square label, .filter-floor label, .filter-dates label {
+        margin-left: 0!important;
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 400px) {
-    .filter-square label, .filter-floor label, .filter-dates label {
+    .filter-cost-mobile label, .filter-square label, .filter-floor label, .filter-dates label {
         margin-left: 0!important;
         margin-top: 10px;
     }
