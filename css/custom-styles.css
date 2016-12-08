@@ -2128,10 +2128,17 @@ footer[role='contentinfo'] .promo-text {
         left: 17%;
     }
     .filters button[type='submit'] {
-        padding-left: 20%;
+        padding-left: 17%;
     }
     .filters button[type='submit']:before {
-        left: 7%;
+        left: 5%;
+    }
+    .header-info .add-object {
+        top: 50px;
+        padding: 10px 10px 10px 30px;
+    }
+    .header-info .phone-number {
+        top: 25px;
     }
 
 }
