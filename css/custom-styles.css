@@ -128,7 +128,9 @@ h1, h2, h3, h4 {
     font-weight: 100;
 }
 h1 {
-
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 1.928571428571429em;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -221,6 +223,13 @@ input[type='radio'], input[type='checkbox'] {
 
 .slide:focus {
    outline: none;
+}
+
+.column-left {
+    float: left;
+}
+.column-right {
+    float: right;
 }
 
 /* custom select */
@@ -1239,7 +1248,7 @@ footer[role='contentinfo'] .promo-text {
 .product-card .image-wrap {
     padding-top: 76%;
 }
-.product-card .product-mark {
+.product-mark {
     display: block;
     width: 100px;
     height: 25px;
@@ -1255,7 +1264,7 @@ footer[role='contentinfo'] .promo-text {
     top: -5px;
     z-index: 1;
 }
-.product-card .product-mark:after {
+.product-mark:after {
     content: '';
     display: block;
     width: 0;
@@ -1629,7 +1638,71 @@ footer[role='contentinfo'] .promo-text {
 .contentbar {
     width: 70%;
     float: left;
+    position: relative;
 }
+
+.object-header {
+    padding: 25px 30px;
+    position: relative;
+}
+.object-header h1 {
+    line-height: 1;
+    padding-right: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+.object-header .product-mark {
+    padding: 0 10px;
+    width: auto;
+    height: 30px;
+    font-size: 1em;
+    letter-spacing: 1px;
+    position: absolute;
+    left: auto;
+    top: 25px;
+    right: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.object-header .product-mark:after {
+    top: 29px;
+}
+.object-address {
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 1.214285714285714em;
+}
+.object-number {
+    display: inline-block;
+    margin-right: 20px;
+}
+.to-compare {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    background: none;
+    border: none;
+    font-family: 'PTSansBold', sans-serif;
+}
+.to-compare:hover {
+    color: #fc7214;
+}
+.to-compare:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 20px;
+    background: transparent url('../source/images/icon-add-product.png') no-repeat;
+    margin-right: 10px;
+}
+
+.object-tabs {
+    position: relative;
+}
+
+
 .sidebar {
     width: 28%;
     float: right;
