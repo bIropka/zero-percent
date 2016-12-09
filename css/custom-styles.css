@@ -1915,11 +1915,11 @@ footer[role='contentinfo'] .promo-text {
     border-top: 1px solid #d3d3d3;
     text-transform: uppercase;
 }
-.slider-calendar .month .caption li:nth-child(6), .slider-calendar .month .caption li:nth-child(7),
-.slider-calendar .month .caption li:nth-child(13), .slider-calendar .month .caption li:nth-child(14),
-.slider-calendar .month .caption li:nth-child(20), .slider-calendar .month .caption li:nth-child(21),
-.slider-calendar .month .caption li:nth-child(27), .slider-calendar .month .caption li:nth-child(28),
-.slider-calendar .month .caption li:nth-child(34), .slider-calendar .month .caption li:nth-child(35) {
+.slider-calendar .month li:nth-child(6), .slider-calendar .month li:nth-child(7),
+.slider-calendar .month li:nth-child(13), .slider-calendar .month li:nth-child(14),
+.slider-calendar .month li:nth-child(20), .slider-calendar .month li:nth-child(21),
+.slider-calendar .month li:nth-child(27), .slider-calendar .month li:nth-child(28),
+.slider-calendar .month li:nth-child(34), .slider-calendar .month li:nth-child(35) {
     color: #fc7214;
 }
 .slider-calendar .month ul li.free {
@@ -2371,8 +2371,136 @@ fieldset {
 }
 
 /**********************************************************************************************************************
-********** modals
+********** page compare
 ***********************************************************************************************************************/
+.compare {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 25px 30px;
+    width: 100%;
+    overflow: auto;
+}
+
+.page-compare h1 {
+    float: left;
+    line-height: 1;
+}
+.objects-number {
+    display: inline-block;
+    margin-right: 20px;
+}
+.objects-number, .to-compare {
+    line-height: 25px;
+}
+
+.compare-table {
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-bottom: none;
+    border-right: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.compare-table .image-wrap {
+    display: inline-block;
+    width: 130px;
+    height: 100px;
+}
+.compare-table td {
+    position: relative;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    vertical-align: middle;
+    padding: 20px;
+    min-width: 250px;
+}
+.compare-table td {
+    width: 25%;
+}
+.compare-table tr:first-of-type td {
+    text-align: center;
+}
+.compare-table .remove-product {
+    display: block;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #fc7214;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.compare-table .remove-product:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: transparent url('../source/images/icon-compare-remove.png');
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+.compare-table .remove-product:hover:before {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.compare-table .remove-product:active {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+.compare-table td h3 a {
+    font-family: 'PTSansBold', sans-serif;
+}
+.compare-table ul li {
+    display: block;
+    padding-left: 10px;
+    position: relative;
+}
+.compare-table ul li:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: #fc7214;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.compare-table tr:nth-child(2n) td {
+    background: #f2f2f2;
+}
+
+    /**********************************************************************************************************************
+    ********** modals
+    ***********************************************************************************************************************/
 
 .window {
     position: fixed;
@@ -3009,6 +3137,11 @@ fieldset {
     }
     .object-tabs-additional-reviews .sidebar {
         padding: 20px;
+    }
+    .compare-header .column-right {
+        float: left;
+        width: 100%;
+        margin-top: 15px;
     }
 }
 
