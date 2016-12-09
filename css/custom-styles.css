@@ -66,6 +66,12 @@ button::-moz-focus-inner {
 input:focus, text:focus {
     outline: none;
 }
+
+input::-webkit-input-placeholder {color: #000000;}
+input::-moz-placeholder {color: #000000;}
+input:-moz-placeholder {color: #000000;}
+input:-ms-input-placeholder {color: #000000;}
+
 input:focus::-webkit-input-placeholder {color: transparent;}
 input:focus::-moz-placeholder {color: transparent;}
 input:focus:-moz-placeholder {color: transparent;}
@@ -75,10 +81,30 @@ textarea {
     resize: none;
 }
 
+textarea::-webkit-input-placeholder {color: #000000;}
+textarea::-moz-placeholder {color: #000000;}
+textarea:-moz-placeholder {color: #000000;}
+textarea:-ms-input-placeholder {color: #000000;}
+
 textarea:focus::-webkit-input-placeholder {color: transparent;}
 textarea:focus::-moz-placeholder {color: transparent;}
 textarea:focus:-moz-placeholder {color: transparent;}
 textarea:focus:-ms-input-placeholder {color: transparent;}
+
+label {
+    display: block;
+    width: 100%;
+    height: 43px;
+}
+label input, label textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+label textarea {
+    padding-top: 10px;
+}
 
 .button-orange {
     -webkit-border-radius: 3px;
@@ -163,6 +189,7 @@ section {
 
 .checkbox-label {
     display: inline-block;
+    width: auto;
     vertical-align: middle;
 }
 .checkbox-label {
@@ -265,6 +292,44 @@ input[type='radio'], input[type='checkbox'] {
 }
 .custom-select label {
     display: none;
+}
+
+/* breadcrumbs */
+.breadcrumbs {
+    background: #f8f8f8;
+    margin: 15px 0;
+}
+.breadcrumbs ul {
+    display: block;
+    float: left;
+}
+.breadcrumbs ul li a, .breadcrumbs ul li {
+    font-size: 12px;
+    color: #808386;
+    text-decoration: none;
+}
+.breadcrumbs ul li a:after {
+    content: '/';
+    display: inline-block;
+    margin-left: 4px;
+}
+.breadcrumbs ul li a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs .additional-links {
+    float: right;
+}
+.additional-links a {
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.additional-links a:first-of-type {
+    margin-right: 20px;
+}
+.additional-links a:hover {
+    color: #fc7214;
+    text-decoration: underline;
 }
 
 /**********************************************************************************************************************
@@ -377,10 +442,16 @@ nav ul li a:hover {
 
 /* header-info */
 .header-info {
+    background: #ffffff;
+}
+.header-info .wrapper-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 0;
+}
+.header-info .wrapper-inner:after {
+    display: none;
 }
 .logo {
     display: block;
@@ -423,6 +494,10 @@ nav ul li a:hover {
 }
 
 /* header-bottom */
+.header-bottom {
+    background: #ffffff;
+    padding-bottom: 20px;
+}
 .burger {
     display: none;
 }
@@ -572,6 +647,7 @@ footer[role='contentinfo'] .promo-text {
     position: relative;
     opacity: 0;
     text-align: center;
+    margin-top: 0;
 }
 .banner .slick-track {
     position: static;
@@ -811,6 +887,7 @@ footer[role='contentinfo'] .promo-text {
 }
 .filter-duration .radio-label {
     display: inline-block;
+    width: auto;
     height: 43px;
     line-height: 39px;
     text-transform: uppercase;
@@ -870,6 +947,7 @@ footer[role='contentinfo'] .promo-text {
 }
 .filter-cost-mobile label, .filter-number label, .filter-square label, .filter-floor label, .filter-dates label {
     display: inline-block;
+    width: auto;
     vertical-align: middle;
 }
 .filter-cost-mobile label:first-of-type, .filter-square label:first-of-type, .filter-floor label:first-of-type, .filter-dates label:first-of-type {
@@ -884,6 +962,7 @@ footer[role='contentinfo'] .promo-text {
     -moz-border-radius: 3px;
     border-radius: 3px;
     color: #000000;
+    padding: 0;
 }
 .filter-number input {
     padding: 0 20px;
@@ -1230,23 +1309,23 @@ footer[role='contentinfo'] .promo-text {
     overflow: hidden;
     height: 38px;
 }
-.product-card .rate {
+.rate {
     display: inline-block;
     vertical-align: bottom;
     white-space: nowrap;
 }
-.product-card .rate li {
+.rate li {
     display: inline-block;
     vertical-align: bottom;
     width: 14px;
     height: 14px;
     background: transparent url('../source/images/sprite-stars.png') no-repeat left top;
 }
-.product-card .rate li.empty-star {
+.rate li.empty-star {
     background-position: right top;
 }
 
-.product-card .reviews-amount {
+.reviews-amount {
     display: inline-block;
     vertical-align: bottom;
     color: #32373b;
@@ -1254,7 +1333,7 @@ footer[role='contentinfo'] .promo-text {
     margin-left: 15px;
     line-height: 14px;
 }
-.product-card .reviews-amount a {
+.reviews-amount a {
     display: inline-block;
     vertical-align: bottom;
     font-family: inherit;
@@ -1262,16 +1341,16 @@ footer[role='contentinfo'] .promo-text {
     font-size: inherit;
     line-height: inherit;
 }
-.product-card h3:hover, .product-card .reviews-amount a:hover {
+.product-card h3:hover, .reviews-amount a:hover {
     color: #ed711d;
 }
-.product-card .product-cost {
+.product-cost {
     font-family: 'PTSansBold', sans-serif;
     color: #ed711d;
     font-size: 1.785714285714286em;
     margin: 10px 0 20px;
 }
-.product-card .product-cost span {
+.product-cost span {
     color: inherit;
     font-size: inherit;
     font-family: inherit;
@@ -1279,20 +1358,20 @@ footer[role='contentinfo'] .promo-text {
 .product-card .product-details {
     height: 77px;
 }
-.product-card .product-details li {
+.product-details li {
     display: block;
     border-bottom: 1px solid #d4d4d4;
     padding: 3px 0;
 }
-.product-card .product-details li:last-child {
+.product-details li:last-child {
     border-bottom: none;
 }
-.product-card .product-details .parameter {
+.product-details .parameter {
     font-family: 'PTSansBold', sans-serif;
     color: #32373b;
     float: left;
 }
-.product-card .product-details .value {
+.product-details .value {
     font-family: 'PTSansBold', sans-serif;
     color: #32373b;
     float: right;
@@ -1536,6 +1615,290 @@ footer[role='contentinfo'] .promo-text {
 }
 
 /**********************************************************************************************************************
+********** page object
+***********************************************************************************************************************/
+
+.contentbar, .sidebar {
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.contentbar {
+    width: 70%;
+    float: left;
+}
+.sidebar {
+    width: 28%;
+    float: right;
+    text-align: center;
+    padding: 20px;
+}
+.sidebar .product-cost {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+.to-booking {
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    padding-left: 35%;
+    line-height: 50px;
+    font-size: 1.428571428571429em;
+    position: relative;
+}
+.to-booking:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 23px;
+    background: transparent url('../source/images/icon-booking.png');
+    position: absolute;
+    margin: auto;
+    left: 20%;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.sidebar p {
+    font-family: 'PTSansBold', sans-serif;
+}
+.sidebar .social-links {
+    margin: 10px 0 20px;
+    text-align: center;
+}
+.sidebar .social-links li {
+    margin: 0 1px;
+}
+.sidebar .social-links li a {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.sidebar .social-links li:nth-child(1) a {background: transparent url('../source/images/icon-vkontakte-square.png');}
+.sidebar .social-links li:nth-child(2) a {background: transparent url('../source/images/icon-facebook-square.png');}
+.sidebar .social-links li:nth-child(3) a {background: transparent url('../source/images/icon-odnoklassniki-square.png');}
+.sidebar .social-links li:nth-child(4) a {background: transparent url('../source/images/icon-twitter-square.png');}
+.sidebar .social-links li:nth-child(5) a {background: transparent url('../source/images/icon-inst-square.png');}
+
+.sidebar .social-links li a:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.object-contacts {
+    background: transparent url('../source/images/background-object-contacts.jpg') no-repeat center;
+    background-size: cover;
+    text-align: left;
+    padding: 25px 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+.object-contacts .user-name, .object-contacts .user-name span {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'PTSansBold', sans-serif;
+}
+.object-contacts a {
+    display: inline-block;
+    color: #ffffff;
+    margin-top: 10px;
+    position: relative;
+    padding-left: 30px;
+}
+.object-contacts .phone {
+    font-size: 1.785714285714286em;
+    text-decoration: none;
+}
+.object-contacts .phone:before, .object-contacts .email:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 19px;
+    background: transparent url('../source/images/icon-phone.png');
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.object-contacts .email {
+    font-family: 'PTSansBold', sans-serif;
+    text-transform: uppercase;
+}
+.object-contacts .email:before {
+    background: transparent url('../source/images/icon-email.png');
+    width: 18px;
+    height: 12px;
+}
+.to-edit, .to-print {
+    text-align: left;
+    font-family: 'PTSansBold', sans-serif;
+}
+.to-edit {
+    float: left;
+}
+.to-print {
+    float: right;
+}
+
+.object-tabs-additional {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+.object-tabs-additional-controls {
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+}
+.object-tabs-additional-controls li {
+    width: 145px;
+    height: 50px;
+    line-height: 50px;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    font-family: 'PTSansBold', sans-serif;
+    font-size: 0.8571428571428571em;
+    position: relative;
+    text-align: center;
+    color: #010000;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.object-tabs-additional-controls li:before {
+    content: '';
+    display: block;
+    width: calc(100% + 2px);
+    height: 4px;
+    background: #cbcbcb;
+    position: absolute;
+    top: 0;
+    left: -1px;
+}
+.object-tabs-additional-controls li.active {
+    background: #ffffff;
+}
+.object-tabs-additional-controls li.active:before {
+    background: #fc7214;
+}
+
+.tabs-additional {
+    display: none;
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 30px 40px;
+}
+.object-tabs-additional-reviews {
+    padding: 0;
+    background: transparent;
+}
+.object-tabs-additional-reviews .contentbar {
+    width: 72%;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    height: 100%;
+    overflow: auto;
+}
+.object-tabs-additional-reviews .sidebar {
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    text-align: left;
+}
+
+.tabs-additional.active {
+    display: block;
+}
+.textarea-wrap {
+    height: 200px;
+}
+.object-tabs-additional-reviews .sidebar label {
+    margin-bottom: 20px;
+    border: 1px solid #9f9f9f;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.object-tabs-additional-reviews .sidebar label input {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.object-tabs-additional-reviews .sidebar .textarea-wrap {
+    margin-bottom: 12px;
+}
+.object-tabs-additional-reviews .sidebar .text {
+    display: inline-block;
+    vertical-align: bottom;
+    padding-left: 10px;
+    line-height: 14px;
+    margin-right: 10px;
+}
+.object-tabs-additional-reviews .sidebar .checkbox-label.checkbox-rate {
+    margin: 0;
+    width: auto;
+    height: auto;
+    border: none;
+}
+.object-tabs-additional-reviews .sidebar .checkbox-label.checkbox-rate:before {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: transparent url('../source/images/sprite-stars.png') no-repeat right top;
+    margin: 0;
+}
+.object-tabs-additional-reviews .sidebar input[type='checkbox']:checked + .checkbox-rate:before {
+    background-position: left top;
+}
+
+.object-tabs-additional-reviews .sidebar .new-code {
+    float: right;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+.object-tabs-additional-reviews .sidebar .new-code:hover {
+    text-decoration: none;
+}
+.object-tabs-additional-reviews .sidebar label input, .object-tabs-additional-reviews .sidebar label textarea {
+    border: none;
+}
+.code-wrap {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    width: 60%;
+}
+.captcha {
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+    height: 43px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.page-object .products-list {
+    display: block;
+}
+.page-object .product-card .product-cost {
+    margin-bottom: 0;
+}
+.page-object h2 {
+    margin-bottom: 20px;
+}
+
+/**********************************************************************************************************************
 ********** modals
 ***********************************************************************************************************************/
 
@@ -1636,16 +1999,6 @@ footer[role='contentinfo'] .promo-text {
     border-radius: 3px;
     padding: 0 20px;
 }
-
-.window form > label > input::-webkit-input-placeholder {color: #000000;}
-.window form > label > input::-moz-placeholder {color: #000000;}
-.window form > label > input:-moz-placeholder {color: #000000;}
-.window form > label > input:-ms-input-placeholder {color: #000000;}
-
-.window form > label > input:focus::-webkit-input-placeholder {color: transparent;}
-.window form > label > input:focus::-moz-placeholder {color: transparent;}
-.window form > label > input:focus:-moz-placeholder {color: transparent;}
-.window form > label > input:focus:-ms-input-placeholder {color: transparent;}
 
 .window form p {
     font-family: 'PTSansItalic', sans-serif;
@@ -1792,8 +2145,13 @@ footer[role='contentinfo'] .promo-text {
         position: static;
         margin-left: 10px;
     }
-    .header-info {
+    .header-info .wrapper-inner {
         display: block;
+    }
+    .header-info .wrapper-inner:after {
+        content: '';
+        display: block;
+        clear: both;
     }
     .header-info:after {
         content: '';
@@ -1868,6 +2226,11 @@ footer[role='contentinfo'] .promo-text {
     }
     .filter-cost-mobile input, .filter-square input, .filter-floor input, .filter-dates input {
         width: 80px;
+    }
+    .additional-links {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
     }
 }
 

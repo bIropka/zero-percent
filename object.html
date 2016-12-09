@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1 комнатная квартира (Продажа)</title>
     <link rel="stylesheet" href="css/custom-styles.css">
+    <link rel="stylesheet" href="css/slick.css">
 </head>
 <body>
 
-<div class="wrapper page-compare">
+<div class="wrapper page-object">
 
     <header role="banner">
 
@@ -74,9 +75,9 @@
 
         </div>
 
-        <div class="wrapper-inner">
+        <div class="header-info">
 
-            <div class="header-info">
+            <div class="wrapper-inner">
 
                 <div class="logo">
                     <img src="source/images/logo.png" alt="logo">
@@ -92,7 +93,11 @@
 
             </div>
 
-            <div class="header-bottom clearfix">
+        </div>
+
+        <div class="header-bottom">
+
+            <div class=" wrapper-inner">
 
                 <div class="burger"></div>
 
@@ -782,9 +787,9 @@
 
                 <div class="reviews-amount">Отзывы <a href="#">257</a></div>
 
-                <div class="product-cost">250<span> грн./мес.</span></div>
+                <div class="product-cost">250 000<span> грн</span></div>
 
-                <ul class="product-details">
+                <ul class="product-details clearfix">
                     <li class="clearfix">
                         <div class="parameter">Район</div>
                         <div class="value">Центр</div>
@@ -819,7 +824,7 @@
                     </li>
                 </ul>
 
-                <button class="to-booking">Забронировать</button>
+                <button class="to-booking button-orange">Забронировать</button>
 
                 <p>Отправить другу ссылку на объект:</p>
 
@@ -835,9 +840,9 @@
 
                     <div class="user-name">Контактное лицо: <span>Олег Иванов</span></div>
 
-                    <a href="tel:+380441111111">+380 44 *** ** **</a>
+                    <a href="tel:+380441111111" class="phone">+380 44 *** ** **</a>
 
-                    <a href="mailto:example@gmail.com">Написать сообщение</a>
+                    <a href="mailto:example@gmail.com" class="email">Написать сообщение</a>
 
                 </div>
 
@@ -850,13 +855,13 @@
             <div class="object-tabs-additional">
 
                 <ul class="object-tabs-additional-controls">
-                    <li>основные</li>
+                    <li class="active">основные</li>
                     <li>дополнительные</li>
                     <li>карта </li>
                     <li>отзывы (27)</li>
                 </ul>
 
-                <div class="object-tabs-additional-main">
+                <div class="tabs-additional object-tabs-additional-main active">
 
                     <div class="info-block">
                         <h4>Безопасность</h4>
@@ -912,7 +917,7 @@
 
                 </div>
 
-                <div class="object-tabs-additional-add">
+                <div class="tabs-additional object-tabs-additional-add">
 
                     <div class="info-block">
                         <h4>Безопасность</h4>
@@ -948,11 +953,11 @@
 
                 </div>
 
-                <div class="object-tabs-additional-map">
+                <div class="tabs-additional object-tabs-additional-map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10252.908736434167!2d36.22594781826171!3d50.02583870602648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1481056056211" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
 
-                <div class="object-tabs-additional-reviews">
+                <div class="tabs-additional object-tabs-additional-reviews clearfix">
 
                     <div class="contentbar">
 
@@ -1126,26 +1131,34 @@
                                 <input type="text" placeholder="Электронная почта *">
                             </label>
 
-                            <label>
-                                <input type="text" placeholder="Телефон">
-                            </label>
-
-                            <label>
+                            <label class="textarea-wrap">
                                 <textarea cols='' rows='' placeholder="Комментарий *"></textarea>
                             </label>
 
-                            Оценка
-                            <ul class="rate">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li class="empty-star"></li>
-                                <li class="empty-star"></li>
-                            </ul>
+                            <fieldset class="clearfix">
 
-                            <button class="new-code">Новый код</button>
+                                <div class="text">Оценка</div>
 
-                            <label>
+                                <input type="checkbox" id="checkbox-rate-1" name="checkbox-rate">
+                                <label for="checkbox-rate-1" class="checkbox-label checkbox-rate"></label>
+
+                                <input type="checkbox" id="checkbox-rate-2" name="checkbox-rate">
+                                <label for="checkbox-rate-2" class="checkbox-label checkbox-rate"></label>
+
+                                <input type="checkbox" id="checkbox-rate-3" name="checkbox-rate">
+                                <label for="checkbox-rate-3" class="checkbox-label checkbox-rate"></label>
+
+                                <input type="checkbox" id="checkbox-rate-4" name="checkbox-rate">
+                                <label for="checkbox-rate-4" class="checkbox-label checkbox-rate"></label>
+
+                                <input type="checkbox" id="checkbox-rate-5" name="checkbox-rate">
+                                <label for="checkbox-rate-5" class="checkbox-label checkbox-rate"></label>
+
+                                <button class="new-code">Новый код</button>
+
+                            </fieldset>
+
+                            <label class="code-wrap">
                                 <input type="text" placeholder="Код подтверждения *">
                             </label>
 
@@ -1168,6 +1181,122 @@
         </div>
 
     </main>
+
+    <div class="wrapper-inner">
+
+        <section class="products-list">
+
+            <h2>Похожие объекты</h2>
+
+            <ul>
+
+                <li class="product-card">
+
+                    <div class="product-mark best-price">Хорошая цена</div>
+
+                    <a href="#" class="image-wrap">
+                        <img src="source/images/product-1.jpg" alt="product">
+                    </a>
+
+                    <h3><a href="#">1 комнатная квартира</a></h3>
+
+                    <p>Район Черемушки, ул. л. Шмидта</p>
+
+                    <ul class="rate">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li class="empty-star"></li>
+                        <li class="empty-star"></li>
+                    </ul>
+
+                    <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                    <div class="product-cost">250<span> грн./мес.</span></div>
+
+                </li>
+
+                <li class="product-card">
+
+                    <a href="#" class="image-wrap">
+                        <img src="source/images/product-2.jpg" alt="product">
+                    </a>
+
+                    <h3><a href="#">2 комнатная квартира</a></h3>
+
+                    <p>Район Черемушки, ул. л. Шмидта, заброшенное строение в углу</p>
+
+                    <ul class="rate">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li class="empty-star"></li>
+                        <li class="empty-star"></li>
+                    </ul>
+
+                    <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                    <div class="product-cost">75000<span> грн./мес.</span></div>
+
+                </li>
+
+                <li class="product-card">
+
+                    <div class="product-mark best-urgently">Срочное</div>
+
+                    <a href="#" class="image-wrap">
+                        <img src="source/images/product-3.jpg" alt="product">
+                    </a>
+
+                    <h3><a href="#">1 комнатная квартира</a></h3>
+
+                    <p>Район Черемушки, ул. л. Шмидта</p>
+
+                    <ul class="rate">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li class="empty-star"></li>
+                        <li class="empty-star"></li>
+                    </ul>
+
+                    <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                    <div class="product-cost">250<span> грн./мес.</span></div>
+
+                </li>
+
+                <li class="product-card">
+
+                    <div class="product-mark best-popular">Популярное</div>
+
+                    <a href="#" class="image-wrap">
+                        <img src="source/images/product-4.jpg" alt="product">
+                    </a>
+
+                    <h3><a href="#">3 комнатная квартира</a></h3>
+
+                    <p>Район Черемушки, ул. л. Шмидта</p>
+
+                    <ul class="rate">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li class="empty-star"></li>
+                        <li class="empty-star"></li>
+                    </ul>
+
+                    <div class="reviews-amount">Отзывы <a href="#">257</a></div>
+
+                    <div class="product-cost">250<span> грн./мес.</span></div>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+    </div>
 
     <footer role="contentinfo">
 
@@ -1318,6 +1447,7 @@
 </div>
 
 <script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/custom-scripts.js"></script>
 </body>
 </html>
