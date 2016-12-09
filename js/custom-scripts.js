@@ -9,10 +9,19 @@ $(document).ready(function () {
     }, 500);
 
     $(document).click(function(event) {
+
         if (!$(event.target).closest(".custom-select").length) {
             $('.custom-select').removeClass('active');
             $('.custom-select').find('ul').stop().slideUp(200);
         }
+
+        if(!$(event.target).closest('.ui-rangeSlider-label-value').length && !$(event.target).closest('.ui-rangeSlider-label-inner').length) {
+            $('.ui-rangeSlider-label-value').removeClass('active');
+            var min = $('.ui-rangeSlider-leftLabel .ui-rangeSlider-label-inner input').val();
+            var max = $('.ui-rangeSlider-rightLabel .ui-rangeSlider-label-inner input').val();
+            $(".filter-slider").rangeSlider("values", min, max);
+        }
+
     });
 
     setTimeout(function() {
@@ -182,6 +191,58 @@ $(document).ready(function () {
         dots: true
 
     });
+
+    /******************************************************************************************************************
+     ******* slider scripts
+     ******************************************************************************************************************/
+    var defaultMin = 150, defaultMax = 700;
+
+    $('.filter-slider').rangeSlider({
+        bounds:{min: 0, max: 1500},
+        defaultValues:{min: defaultMin , max: defaultMax},
+        step: 10
+    });
+
+    $('<form action="#"><input type="text" /></form>').appendTo('.ui-rangeSlider-label-inner');
+    $('.ui-rangeSlider-label-inner input').css({
+        'display' : 'block',
+        'width': '100%',
+        'height': '100%',
+        'background': '#ffffff',
+        'color': '#000000',
+        'font-size': '0.8571428571428571em',
+        'font-family': '"PTSansBold", sans-serif',
+        'text-align': 'center',
+        'padding-top': '1px',
+        'border': 'none'
+    });
+
+    $('.ui-rangeSlider-leftLabel .ui-rangeSlider-label-inner input').attr('value', defaultMin);
+    $('.ui-rangeSlider-rightLabel .ui-rangeSlider-label-inner input').attr('value', defaultMax);
+
+    $(".filter-slider").bind("valuesChanging", function(e, data){
+        var values = $(".filter-slider").rangeSlider("values");
+        $('.ui-rangeSlider-leftLabel .ui-rangeSlider-label-inner input').val(values.min);
+        $('.ui-rangeSlider-rightLabel .ui-rangeSlider-label-inner input').val(values.max);
+    });
+
+    $('.ui-rangeSlider-label-value').click(function() {
+        $(this).toggleClass('active');
+    });
+
+    $('.ui-rangeSlider-label-inner form').submit(function(event) {
+        var min = $('.ui-rangeSlider-leftLabel .ui-rangeSlider-label-inner input').val();
+        var max = $('.ui-rangeSlider-rightLabel .ui-rangeSlider-label-inner input').val();
+        $(".filter-slider").rangeSlider("values", min, max);
+
+        event.preventDefault();
+    });
+
+    /******************************************************************************************************************
+     ******* scrollbar scripts
+     ******************************************************************************************************************/
+
+    $('.object-tabs-additional-reviews .contentbar').mCustomScrollbar();
 
 });
 

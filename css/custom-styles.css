@@ -113,6 +113,7 @@ label textarea {
     color: #ffffff;
     background: #fc7214;
     font-family: 'PTSansBold', sans-serif;
+    letter-spacing: 1px;
 }
 .button-orange:hover {
     background: #32373b;
@@ -1798,23 +1799,106 @@ footer[role='contentinfo'] .promo-text {
     border-radius: 3px;
     padding: 30px 40px;
 }
+
+/* object tabs additional main */
+
+.object-tabs-additional-main .info-block, .object-tabs-additional-add .info-block {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10%;
+    margin-bottom: 30px;
+}
+.object-tabs-additional-main ul, .object-tabs-additional-add ul {
+    margin-top: 5px;
+}
+.object-tabs-additional-main ul li, .object-tabs-additional-add ul li {
+    display: block;
+    padding-left: 10px;
+    position: relative;
+    font-size: 1.071428571428571em;
+}
+.object-tabs-additional-main ul li:before, .object-tabs-additional-add ul li:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #fc7214;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+/* object tabs additional map */
+
+.object-tabs-additional-map {
+    width: 100%;
+    height: 575px;
+}
+
+/* object tabs additional reviews */
+.mCSB_inside>.mCSB_container {
+    margin-right: 40px;
+    padding: 30px 0;
+}
+.mCSB_scrollTools {
+    width: 20px;
+    height: calc(100% + 60px);
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    opacity: 1;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 10px!important;
+    background: #9f9f9f!important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-top: 5px;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+    opacity: 0;
+}
 .object-tabs-additional-reviews {
     padding: 0;
     background: transparent;
+    height: 595px;
+    position: relative;
 }
 .object-tabs-additional-reviews .contentbar {
     width: 72%;
-    border-top: none;
-    border-bottom: none;
-    border-left: none;
+    border: none;
     height: 100%;
     overflow: auto;
+    padding: 0 0 0 30px;
+}
+.object-tabs-additional-reviews .contentbar:after, .object-tabs-additional-reviews .contentbar:before {
+    content: '';
+    display: block;
+    width: calc(72% - 30px);
+    height: 30px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1));
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.object-tabs-additional-reviews .contentbar:before {
+    bottom: auto;
+    top: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1));
 }
 .object-tabs-additional-reviews .sidebar {
-    border-top: none;
-    border-bottom: none;
-    border-right: none;
+    border: none;
     text-align: left;
+    height: 100%;
+    padding: 30px;
 }
 
 .tabs-additional.active {
@@ -1822,6 +1906,10 @@ footer[role='contentinfo'] .promo-text {
 }
 .textarea-wrap {
     height: 200px;
+}
+.object-tabs-additional-reviews .sidebar fieldset {
+    display: block;
+    border: none;
 }
 .object-tabs-additional-reviews .sidebar label {
     margin-bottom: 20px;
@@ -1875,19 +1963,69 @@ footer[role='contentinfo'] .promo-text {
     border: none;
 }
 .code-wrap {
-    display: inline-block;
+    display: block;
     vertical-align: top;
     margin-top: 15px;
     width: 60%;
+    float: left;
 }
 .captcha {
-    display: inline-block;
-    vertical-align: top;
+    display: block;
+    float: right;
     width: 35%;
     height: 43px;
     margin-top: 15px;
     overflow: hidden;
 }
+.object-tabs-additional-reviews .sidebar p {
+    text-align: center;
+}
+.form-review button[type='submit'] {
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.428571428571429em;
+    margin: 20px 0 10px 0;
+}
+
+.review {
+    margin-bottom: 25px;
+}
+.review-info .name {
+    display: inline-block;
+    vertical-align: bottom;
+    font-family: 'PTSansBold', sans-serif;
+}
+.review-info .name:before {
+    content: '';
+    display: inline-block;
+    vertical-align: bottom;
+    width: 20px;
+    height: 20px;
+    background: transparent url('../source/images/icon-clock.png');
+    margin-right: 10px;
+}
+.review-info time {
+    display: inline-block;
+    vertical-align: bottom;
+    color: #cbcbcb;
+}
+.review-info button {
+    display: inline-block;
+    vertical-align: bottom;
+    background: none;
+    border: none;
+    color: #fc7214;
+    font-family: 'PTSansBold', sans-serif;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.review-info button:hover {
+    text-decoration: none;
+}
+
 .page-object .products-list {
     display: block;
 }
@@ -2491,7 +2629,8 @@ footer[role='contentinfo'] .promo-text {
         left: 17%;
     }
     .filters button[type='submit'] {
-        padding-left: 17%;
+        padding-left: 15%;
+        padding-right: 0;
     }
     .filters button[type='submit']:before {
         left: 5%;
