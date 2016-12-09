@@ -655,9 +655,11 @@ footer[role='contentinfo'] .promo-text {
     display: block;
     width: 100%;
     position: relative;
-    opacity: 0;
     text-align: center;
     margin-top: 0;
+}
+.slider {
+    opacity: 0;
 }
 .banner .slick-track {
     position: static;
@@ -1697,11 +1699,159 @@ footer[role='contentinfo'] .promo-text {
     background: transparent url('../source/images/icon-add-product.png') no-repeat;
     margin-right: 10px;
 }
-
+.object-contentbar, .object-sidebar {
+    height: 700px;
+    overflow: hidden;
+}
+.object-contentbar {
+    padding-bottom: 15px;
+}
 .object-tabs {
     position: relative;
+    padding: 0 30px;
 }
 
+.tab {
+    display: none;
+}
+.tab.active {
+    display: block;
+}
+.object-tabs-controls {
+    display: block;
+    background: rgba(0, 0, 0, 0.77);
+    position: absolute;
+    top: 0;
+    left: 30px;
+    right: 30px;
+    z-index: 10;
+}
+.object-tabs-controls li {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    color: #ffffff;
+    font-family: 'PTSansBold', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8571428571428571em;
+    padding: 0 20px;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    letter-spacing: 1px;
+}
+.object-tabs-controls li:hover {
+    color: #fc7214;
+}
+.object-tabs-controls li.active {
+    background: #fc7214;
+    color: #ffffff;
+}
+
+.object-slider {
+    height: 465px;
+    overflow: hidden;
+}
+.object-slider .slick-arrow {
+    display: block;
+    width: 58px;
+    height: 58px;
+    background: transparent url('../source/images/sprite-slider.png') no-repeat left center;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.6;
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+}
+.object-slider .slick-prev {
+    left: 5%;
+}
+.object-slider .slick-next {
+    background-position: right center;
+    right: 5%;
+}
+.object-slider .slick-arrow:hover {
+    opacity: 1;
+}
+
+.object-slider-dots {
+    display: block;
+    margin-top: 14px;
+}
+.object-slider-dots li {
+    display: block;
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-right: 17px;
+    border: 3px solid #c6c6c6;
+    cursor: pointer;
+}
+.object-slider-dots li:last-child {
+    margin-right: 0;
+}
+.object-slider-dots li.active {
+    border: 3px solid #fc7214;
+}
+.object-slider-dots .image-wrap img {
+    height: 100%;
+    width: auto;
+}
+
+.object-tabs .tab {
+    height: 569px;
+    overflow: hidden;
+}
+
+/* object tabs booking */
+
+.object-tabs-booking {
+    padding: 70px 25px 0;
+    background: #f8f8f8;
+    border: 1px solid #f2f2f2;
+}
+.object-tabs-booking p {
+    font-size: 1.214285714285714em;
+}
+.slider-calendar {
+    margin-top: 35px;
+}
+.slider-calendar .month {
+    text-align: center;
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+}
+.month-name {
+    color: #393939;
+    font-family: 'PTSansBold', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.slider-calendar .month ul {
+    display: block;
+    width: 100%;
+    padding: 0 15px;
+}
+.slider-calendar .month ul li {
+    display: block;
+    width:14.28571428571429%;
+    float: left;
+    padding: 5px 0;
+    border-bottom: 1px solid #d3d3d3;
+    font-family: 'PTSansBold', sans-serif;
+}
+.slider-calendar .month .caption li {
+    border-top: 1px solid #d3d3d3;
+    text-transform: uppercase;
+}
 
 .sidebar {
     width: 28%;
@@ -1863,8 +2013,7 @@ footer[role='contentinfo'] .promo-text {
     background: #fc7214;
 }
 
-.tabs-additional {
-    display: none;
+.object-tabs-additional .tab {
     background: #ffffff;
     border: 1px solid #e7e7e7;
     -webkit-border-radius: 3px;
@@ -1938,7 +2087,7 @@ footer[role='contentinfo'] .promo-text {
 .mCSB_scrollTools .mCSB_draggerRail {
     opacity: 0;
 }
-.object-tabs-additional-reviews {
+.tab.object-tabs-additional-reviews {
     padding: 0;
     background: transparent;
     height: 595px;
@@ -1954,7 +2103,7 @@ footer[role='contentinfo'] .promo-text {
 .object-tabs-additional-reviews .contentbar:after, .object-tabs-additional-reviews .contentbar:before {
     content: '';
     display: block;
-    width: calc(72% - 30px);
+    width: calc(100% - 30px);
     height: 30px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 1));
     position: absolute;
@@ -1974,9 +2123,6 @@ footer[role='contentinfo'] .promo-text {
     padding: 30px;
 }
 
-.tabs-additional.active {
-    display: block;
-}
 .textarea-wrap {
     height: 200px;
 }

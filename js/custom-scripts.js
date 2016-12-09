@@ -5,7 +5,7 @@ $(document).ready(function () {
      ******************************************************************************************************************/
 
     setTimeout(function() {
-        $('.banner').animate({opacity: 1}, 500);
+        $('.slider').animate({opacity: 1}, 500);
     }, 500);
 
     $(document).click(function(event) {
@@ -158,16 +158,16 @@ $(document).ready(function () {
         $(this).addClass('added').html('В списке сравнения');
     });
 
-    $('.object-tabs-additional-controls li').click(function() {
+    $('.tab-control').click(function() {
 
         if(!$(this).hasClass('active')) {
 
-            $('.object-tabs-additional-controls li.active').removeClass('active');
-            $('.tabs-additional.active').removeClass('active');
+            $(this).siblings('.active').removeClass('active');
+            $(this).parent().siblings('.tab.active').removeClass('active');
 
             $(this).addClass('active');
             var index = $(this).index();
-            $('.tabs-additional').eq(index).addClass('active')
+            $(this).parent().siblings('.tab').eq(index).addClass('active')
 
         }
 
@@ -189,8 +189,28 @@ $(document).ready(function () {
         prevArrow: '.banner-control-left',
         nextArrow: '.banner-control-right',
         dots: true
+    });
+
+    $('.object-slider').slick();
+
+    $('.object-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+
+        $('.object-slider-dots .active').removeClass('active');
+        $('.object-slider-dots li').eq(nextSlide).addClass('active');
+        
+    });
+
+    $('.object-slider-dots li').click(function() {
+
+        $('.object-slider-dots .active').removeClass('active');
+        $(this).addClass('active');
+
+        var index = $(this).index();
+        $('.object-slider').slick('slickGoTo', index);
 
     });
+
+
 
     /******************************************************************************************************************
      ******* slider scripts

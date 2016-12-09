@@ -143,7 +143,7 @@
 
         <div class="wrapper-inner">
 
-            <div class="contentbar">
+            <div class="contentbar object-contentbar">
 
                 <div class="object-header clearfix">
 
@@ -165,16 +165,16 @@
 
                 <div class="object-tabs">
                     
-                    <ul class="object-tabs-controls">
-                        <li>фото</li>
-                        <li>видео</li>
-                        <li>панорама</li>
-                        <li>периоды броней</li>
+                    <ul class="object-tabs-controls clearfix">
+                        <li class="tab-control active">фото</li>
+                        <li class="tab-control">видео</li>
+                        <li class="tab-control">панорама</li>
+                        <li class="tab-control">периоды броней</li>
                     </ul>
 
-                    <div class="object-tabs-photos">
+                    <div class="object-tabs-photos tab active">
 
-                        <div class="object-slider-large">
+                        <div class="slider object-slider">
                             <div class="slide">
                                 <img src="source/images/object-1.jpg" alt="object">
                             </div>
@@ -192,31 +192,35 @@
                             </div>
                         </div>
 
-                        <div class="object-slider-small">
-                            <div class="slide">
+                        <ul class="object-slider-dots clearfix">
+                            <li class="image-wrap active">
                                 <img src="source/images/object-1.jpg" alt="object">
-                            </div>
-                            <div class="slide">
+                            </li>
+                            <li class="image-wrap">
                                 <img src="source/images/object-2.jpg" alt="object">
-                            </div>
-                            <div class="slide">
+                            </li>
+                            <li class="image-wrap">
                                 <img src="source/images/object-3.jpg" alt="object">
-                            </div>
-                            <div class="slide">
+                            </li>
+                            <li class="image-wrap">
                                 <img src="source/images/object-4.jpg" alt="object">
-                            </div>
-                            <div class="slide">
+                            </li>
+                            <li class="image-wrap">
                                 <img src="source/images/object-5.jpg" alt="object">
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
 
                     </div>
 
-                    <div class="object-tabs-video">
-                        <img src="source/images/video.jpg" alt="video">
+                    <div class="object-tabs-video tab">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6LHgo4ziw4c" frameborder="0" allowfullscreen></iframe>
                     </div>
 
-                    <div class="object-tabs-booking">
+                    <div class="object-tabs-panorama tab">
+                        <img src="source/images/panorama.jpg" alt="panorama">
+                    </div>
+
+                    <div class="object-tabs-booking tab">
 
                         <p>Периоды свободного/сданного жилья:</p>
 
@@ -224,7 +228,7 @@
                             
                             <div class="month">
                                 <div class="month-name">Январь 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -233,7 +237,8 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
+                                    
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -270,7 +275,7 @@
 
                             <div class="month">
                                 <div class="month-name">Февраль 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -279,7 +284,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -313,7 +318,7 @@
 
                             <div class="month">
                                 <div class="month-name">Март 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -322,7 +327,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -359,7 +364,7 @@
 
                             <div class="month">
                                 <div class="month-name">Апрель 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -368,7 +373,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -404,7 +409,7 @@
 
                             <div class="month">
                                 <div class="month-name">Май 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -413,7 +418,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -450,7 +455,7 @@
 
                             <div class="month">
                                 <div class="month-name">Июнь 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -459,7 +464,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -495,7 +500,7 @@
 
                             <div class="month">
                                 <div class="month-name">Июль 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -504,7 +509,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -541,7 +546,7 @@
 
                             <div class="month">
                                 <div class="month-name">Август 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -550,7 +555,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -587,7 +592,7 @@
 
                             <div class="month">
                                 <div class="month-name">Сентябрь 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -596,7 +601,7 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -632,7 +637,7 @@
 
                             <div class="month">
                                 <div class="month-name">Октябрь 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -641,7 +646,9 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
+                                    <li></li>
+                                    <li></li>
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -673,12 +680,14 @@
                                     <li>29</li>
                                     <li>30</li>
                                     <li>31</li>
+                                    <li></li>
+                                    <li></li>
                                 </ul>
                             </div>
 
                             <div class="month">
                                 <div class="month-name">Ноябрь 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -687,7 +696,9 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
+                                    <li></li>
+                                    <li></li>
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -718,12 +729,15 @@
                                     <li>28</li>
                                     <li>29</li>
                                     <li>30</li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
                                 </ul>
                             </div>
 
                             <div class="month">
                                 <div class="month-name">Декабрь 2016</div>
-                                <ul class="caption">
+                                <ul class="clearfix caption">
                                     <li>пн</li>
                                     <li>вт</li>
                                     <li>ср</li>
@@ -732,7 +746,11 @@
                                     <li>сб</li>
                                     <li>вс</li>
                                 </ul>
-                                <ul>
+                                <ul class="clearfix">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
                                     <li>1</li>
                                     <li>2</li>
                                     <li>3</li>
@@ -764,6 +782,7 @@
                                     <li>29</li>
                                     <li>30</li>
                                     <li>31</li>
+                                    <li></li>
                                 </ul>
                             </div>
                             
@@ -781,7 +800,7 @@
 
             </div>
 
-            <div class="sidebar">
+            <div class="sidebar object-sidebar">
 
                 <ul class="rate">
                     <li></li>
@@ -861,13 +880,13 @@
             <div class="object-tabs-additional">
 
                 <ul class="object-tabs-additional-controls">
-                    <li class="active">основные</li>
-                    <li>дополнительные</li>
-                    <li>карта </li>
-                    <li>отзывы (27)</li>
+                    <li class="tab-control active">основные</li>
+                    <li class="tab-control">дополнительные</li>
+                    <li class="tab-control">карта </li>
+                    <li class="tab-control">отзывы (27)</li>
                 </ul>
 
-                <div class="tabs-additional object-tabs-additional-main active">
+                <div class="tab object-tabs-additional-main active">
 
                     <div class="info-block">
                         <h4>Безопасность</h4>
@@ -923,7 +942,7 @@
 
                 </div>
 
-                <div class="tabs-additional object-tabs-additional-add">
+                <div class="tab object-tabs-additional-add">
 
                     <div class="info-block">
                         <h4>Безопасность</h4>
@@ -959,11 +978,11 @@
 
                 </div>
 
-                <div class="tabs-additional object-tabs-additional-map">
+                <div class="tab object-tabs-additional-map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10252.908736434167!2d36.22594781826171!3d50.02583870602648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1481056056211" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
 
-                <div class="tabs-additional object-tabs-additional-reviews clearfix">
+                <div class="tab object-tabs-additional-reviews clearfix">
 
                     <div class="contentbar">
 
