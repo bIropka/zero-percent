@@ -908,7 +908,7 @@
 
                     <a href="tel:+380441111111" class="phone">+380 44 *** ** **</a>
 
-                    <a href="mailto:example@gmail.com" class="email">Написать сообщение</a>
+                    <div class="write-message">Написать сообщение</div>
 
                 </div>
 
@@ -1460,7 +1460,7 @@
 
         <p>* поля, обязательные для заполнения</p>
 
-        <button class="button-orange add-object">Отправить заявку</button>
+        <button type="submit" class="button-orange add-object">Отправить заявку</button>
 
     </form>
 
@@ -1510,7 +1510,147 @@
 
         <p>* поля, обязательные для заполнения</p>
 
-        <button class="button-orange add-object">Добавить объект</button>
+        <button type="submit" class="button-orange add-object">Добавить объект</button>
+
+    </form>
+
+</div>
+
+<div class="window window-object-message">
+
+    <form action="#">
+
+        <div class="close-window"></div>
+
+        <div class="title">Сообщение владельцу объявления № 27</div>
+
+        <label>
+            <input type="text" placeholder="Имя *">
+        </label>
+
+        <label>
+            <input type="tel" placeholder="Номер телефона *">
+        </label>
+
+        <label>
+            <input type="email" placeholder="Электронная почта *">
+        </label>
+
+        <label class="textarea-wrap">
+            <textarea cols='' rows='' placeholder="Сообщение *"></textarea>
+        </label>
+
+        <fieldset class="clearfix">
+
+            <label class="code-wrap">
+                <input type="text" placeholder="Код подтверждения *">
+            </label>
+
+            <button class="new-code">Новый код</button>
+
+            <div class="captcha">
+                <img src="source/images/captcha.jpg" alt="captcha">
+            </div>
+
+        </fieldset>
+
+        <p>* поля, обязательные для заполнения</p>
+
+        <button type="submit" class="button-orange">Отправить сообщение</button>
+
+    </form>
+
+</div>
+
+<div class="window window-booking">
+
+    <form action="#">
+
+        <div class="close-window"></div>
+
+        <div class="title">Бронирование: <a href="#">Квартира ул. Большая Полянка, д. 27</a></div>
+
+        <label>
+            <input type="text" placeholder="Имя *">
+        </label>
+
+        <label>
+            <input type="tel" placeholder="Номер телефона *">
+        </label>
+
+        <label>
+            <input type="email" placeholder="Электронная почта *">
+        </label>
+
+        <fieldset class="clearfix">
+
+            <label class="date-wrap">
+                <input type="text" placeholder="Дата заезда *">
+            </label>
+
+            <div class="custom-select custom-select-form">
+                <div class="current-value">Время заезда *</div>
+                <div class="triangles"></div>
+                <ul>
+                    <li>Ранний заезд</li>
+                    <li>Поздний заезд</li>
+                </ul>
+                <label><input type="text"></label>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="clearfix">
+
+            <label class="date-wrap">
+                <input type="text" placeholder="Дата выезда *">
+            </label>
+
+            <div class="custom-select custom-select-form">
+                <div class="current-value">Время выезда *</div>
+                <div class="triangles"></div>
+                <ul>
+                    <li>Ранний выезд</li>
+                    <li>Поздний выезд</li>
+                </ul>
+                <label><input type="text"></label>
+            </div>
+
+        </fieldset>
+
+        <div class="custom-select custom-select-form">
+            <div class="current-value">Количество гостей</div>
+            <div class="triangles"></div>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>Много</li>
+            </ul>
+            <label><input type="text"></label>
+        </div>
+
+        <label class="textarea-wrap">
+            <textarea cols='' rows='' placeholder="Комментарий"></textarea>
+        </label>
+
+        <fieldset class="clearfix">
+
+            <label class="code-wrap">
+                <input type="text" placeholder="Код подтверждения *">
+            </label>
+
+            <button class="new-code">Новый код</button>
+
+            <div class="captcha">
+                <img src="source/images/captcha.jpg" alt="captcha">
+            </div>
+
+        </fieldset>
+
+        <p>* поля, обязательные для заполнения</p>
+
+        <button type="submit" class="button-orange">Отправить сообщение</button>
 
     </form>
 

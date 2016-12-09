@@ -147,6 +147,14 @@ $(document).ready(function () {
     $('.make-application').click(function() {
         $('.window-make-application').fadeIn();
     });
+
+    $('.write-message').click(function() {
+        $('.window-object-message').fadeIn();
+    });
+
+    $('.to-booking').click(function() {
+        $('.window-booking').fadeIn();
+    });
     
     $('.window').click(function (event) {
         $target = $(event.target);
