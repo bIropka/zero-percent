@@ -167,7 +167,17 @@ $(document).ready(function () {
 
             $(this).addClass('active');
             var index = $(this).index();
-            $(this).parent().siblings('.tab').eq(index).addClass('active')
+            $(this).parent().siblings('.tab').eq(index).addClass('active');
+
+            if ($(this).parent().hasClass('object-tabs-controls') && $(this).index() == 3) {
+
+                var currentSlide = $('.slider-calendar').slick('slickCurrentSlide');
+                $('.slider-calendar').slick('slickGoTo', currentSlide, true);
+
+                setTimeout(function() {
+                    $('.slider-calendar').animate({'opacity' : 1}, 400);
+                }, 500);
+            }
 
         }
 
@@ -210,10 +220,23 @@ $(document).ready(function () {
 
     });
 
+    $('.slider-calendar').slick({
+        slidesToShow: 3,
+        initialSlide: 11,
+        responsive: [
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
 
 
     /******************************************************************************************************************
-     ******* slider scripts
+     ******* filter slider scripts
      ******************************************************************************************************************/
     var defaultMin = 150, defaultMax = 700;
 

@@ -1756,6 +1756,13 @@ footer[role='contentinfo'] .promo-text {
     height: 465px;
     overflow: hidden;
 }
+.object-slider .slick-track, .object-slider .slick-slide {
+    height: 473px;
+}
+.object-slider .slick-slide img {
+    height: 100%;
+    width: auto;
+}
 .object-slider .slick-arrow {
     display: block;
     width: 58px;
@@ -1817,17 +1824,72 @@ footer[role='contentinfo'] .promo-text {
     padding: 70px 25px 0;
     background: #f8f8f8;
     border: 1px solid #f2f2f2;
+    overflow: hidden;
 }
 .object-tabs-booking p {
     font-size: 1.214285714285714em;
 }
+.object-tabs-booking .slider-wrap {
+    width: 100%;
+    overflow: hidden;
+}
 .slider-calendar {
     margin-top: 35px;
+    opacity: 0;
+    width: calc(100% + 10px);
+    margin-left: -5px;
+    margin-bottom: 30px;
+}
+.slider-calendar .slick-arrow {
+    display: block;
+    width: 11px;
+    height: 15px;
+    background: transparent url('../source/images/sprite-slider-calendar.png');
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.slider-calendar .slick-arrow:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.slider-calendar .slick-prev {
+    background-position: left top;
+    left: 20px;
+}
+.slider-calendar .slick-prev:active {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    left: 18px;
+}
+.slider-calendar .slick-next {
+    background-position: right top;
+    right: 20px;
+}
+.slider-calendar .slick-next:active {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    right: 18px;
 }
 .slider-calendar .month {
     text-align: center;
     border-left: 1px solid #d3d3d3;
     border-right: 1px solid #d3d3d3;
+    padding-bottom: 20px;
+}
+.slider-calendar .month:focus {
+    outline: none;
 }
 .month-name {
     color: #393939;
@@ -1842,15 +1904,61 @@ footer[role='contentinfo'] .promo-text {
 }
 .slider-calendar .month ul li {
     display: block;
-    width:14.28571428571429%;
+    width: 14.28571428571429%;
     float: left;
-    padding: 5px 0;
     border-bottom: 1px solid #d3d3d3;
     font-family: 'PTSansBold', sans-serif;
+    height: 23px;
+    line-height: 23px;
 }
 .slider-calendar .month .caption li {
     border-top: 1px solid #d3d3d3;
     text-transform: uppercase;
+}
+.slider-calendar .month .caption li:nth-child(6), .slider-calendar .month .caption li:nth-child(7),
+.slider-calendar .month .caption li:nth-child(13), .slider-calendar .month .caption li:nth-child(14),
+.slider-calendar .month .caption li:nth-child(20), .slider-calendar .month .caption li:nth-child(21),
+.slider-calendar .month .caption li:nth-child(27), .slider-calendar .month .caption li:nth-child(28),
+.slider-calendar .month .caption li:nth-child(34), .slider-calendar .month .caption li:nth-child(35) {
+    color: #fc7214;
+}
+.slider-calendar .month ul li.free {
+    background: #7bb71c;
+    color: #ffffff;
+}
+.slider-calendar .month ul li.booked {
+    background: #fc7214;
+    color: #ffffff;
+}
+.slider-calendar .month ul li.now {
+    background: #d3d3d3;
+    color: #000000;
+}
+.legend {
+    margin-bottom: 15px;
+}
+.legend div {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+.legend div:before {
+    content: '';
+    display: inline-block;
+    vertical-align: bottom;
+    width: 26px;
+    height: 24px;
+    margin-right: 10px;
+}
+.legend-booked:before {
+    background: #fc7214;
+}
+.legend-free:before {
+    background: #7bb71c;
+}
+.legend-now:before {
+    background: #d3d3d3;
 }
 
 .sidebar {
@@ -2069,7 +2177,7 @@ footer[role='contentinfo'] .promo-text {
 }
 .mCSB_scrollTools {
     width: 20px;
-    height: calc(100% + 60px);
+    height: 100%;
     top: 0;
     bottom: 0;
     border-left: 1px solid #e7e7e7;
@@ -2430,6 +2538,9 @@ footer[role='contentinfo'] .promo-text {
     .filter-controls {
         width: 46%;
     }
+    .object-contacts {
+        padding: 10px;
+    }
 }
 
 @media (max-width: 1080px) {
@@ -2542,6 +2653,11 @@ footer[role='contentinfo'] .promo-text {
         right: 10px;
         font-size: 1.5em;
     }
+    .object-tabs-additional-reviews .sidebar .text {
+        padding-left: 0;
+        margin-right: 5px;
+    }
+
 }
 
 @media (max-width: 980px) {
@@ -2588,6 +2704,49 @@ footer[role='contentinfo'] .promo-text {
         float: left;
         width: 100%;
         margin-top: 10px;
+    }
+    .page-object .contentbar, .page-object .sidebar {
+        display: block;
+        width: 100%;
+        float: none;
+        height: auto;
+    }
+    .page-object .sidebar {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .object-slider .slick-track, .object-slider .slide {
+        height: auto;
+    }
+    .object-slider .slide img {
+        height: auto;
+        width: 100%;
+    }
+    .tab.object-tabs-additional-reviews {
+        height: auto;
+        position: relative;
+        background: #ffffff;
+    }
+    .tab.object-tabs-additional-reviews .contentbar {
+        height: 300px;
+        border-bottom:1px solid #e7e7e7;
+    }
+    .tab.object-tabs-additional-reviews .sidebar {
+        width: 100%;
+        max-width: 350px;
+    }
+    .object-tabs .tab, .object-slider {
+        height: auto;
+    }
+    .object-tabs-additional-controls {
+        text-align: center;
+    }
+    .object-tabs-additional-map {
+        height: 300px;
+    }
+    .object-tabs-video.tab {
+        height: 350px;
     }
 }
 
@@ -2714,6 +2873,55 @@ footer[role='contentinfo'] .promo-text {
     .filters .filter-cost-mobile {
         display: block;
     }
+    .object-slider-dots li {
+        width: 45px;
+        height: 45px;
+    }
+    .object-tabs-controls li {
+        height: 35px;
+        line-height: 35px;
+        padding: 0 10px;
+        letter-spacing: 1px;
+    }
+    .object-slider .slick-arrow {
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+    }
+    .object-tabs-booking .slider-wrap {
+        width: 320px;
+    }
+    .object-tabs-additional-controls {
+        margin-bottom: -2px;
+    }
+    .object-tabs-additional-controls li {
+        width: 23%;
+    }
+    .object-tabs-additional .tab {
+        padding: 20px;
+    }
+    .object-header {
+        padding: 60px 20px 20px;
+    }
+    .object-header .product-mark {
+        top: 20px;
+        left: 20px;
+        right: auto;
+    }
+    .object-header h1 {
+        padding-right: 0;
+        overflow: inherit;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+    .object-header .column-right {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .object-tabs-additional-reviews .sidebar {
+        padding: 20px;
+    }
 }
 
 
@@ -2831,6 +3039,54 @@ footer[role='contentinfo'] .promo-text {
         margin-left: 0!important;
         margin-top: 10px;
     }
+    .object-slider-dots {
+        display: none;
+    }
+    .object-tabs {
+        padding: 0;
+    }
+    .object-tabs-controls {
+        left: 0;
+        right: 0;
+    }
+    .object-tabs-video.tab {
+        height: 300px;
+    }
+    .object-contentbar {
+        padding-bottom: 0;
+    }
+    .object-tabs-additional-controls li {
+        width: 45%;
+    }
+    .object-tabs-additional .tab {
+        padding: 10px;
+    }
+    .object-tabs-additional-reviews .contentbar {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .object-number {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+    .code-wrap {
+        width: 100%;
+        float: none;
+    }
+    .captcha {
+        display: block;
+        width: 120px;
+        height: auto;
+        float: none;
+        margin: 0 0 15px;
+    }
+    .object-tabs-additional-reviews .sidebar {
+        margin-top: 20px;
+        padding: 10px;
+    }
+
 }
 
 @media (max-width: 400px) {
@@ -2860,6 +3116,12 @@ footer[role='contentinfo'] .promo-text {
     }
     .header-info .phone-number {
         top: 25px;
+    }
+    .object-tabs-booking .slider-wrap {
+        width: 280px;
+    }
+    .object-tabs-controls li {
+        font-size: 0.7em;
     }
 
 }
