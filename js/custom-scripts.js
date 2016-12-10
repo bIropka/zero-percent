@@ -12,7 +12,7 @@ $(document).ready(function () {
 
         if (!$(event.target).closest(".custom-select").length) {
             $('.custom-select').removeClass('active');
-            $('.custom-select').find('ul').stop().slideUp(200);
+            $('.custom-select').find('ul').stop().fadeOut(0);
         }
 
         if(!$(event.target).closest('.ui-rangeSlider-label-value').length && !$(event.target).closest('.ui-rangeSlider-label-inner').length) {
@@ -46,33 +46,18 @@ $(document).ready(function () {
      ******* custom select scripts
      ******************************************************************************************************************/
 
-    $('.custom-select').hover (
-        function() {
-            if ($(window).width() > '1279' && !$(this).hasClass('custom-select-form')){
-                $(this).addClass('active');
-                $(this).find('ul').stop().fadeIn(0);
-            }
-        },
-        function() {
-            if ($(window).width() > '1279' && !$(this).hasClass('custom-select-form')){
-                $(this).removeClass('active');
-                $(this).find('ul').stop().fadeOut(0);
-            }
-        }
-    );    
-
     $('.custom-select .current-value').click(function() {
-        if ($(window).width() < '1280' || $(this).parent().hasClass('custom-select-form')){
-            if(!$(this).parent().hasClass('active')) {
-                $('.custom-select').removeClass('active');
-                $(this).parent().addClass('active');
-                $('.custom-select').find('ul').stop().fadeOut(0);
-                $(this).siblings('ul').stop().fadeIn(0);
-            } else {
-                $('.custom-select').removeClass('active');
-                $('.custom-select').find('ul').stop().fadeOut(0);
-            }
+
+        if(!$(this).parent().hasClass('active')) {
+            $('.custom-select').removeClass('active');
+            $(this).parent().addClass('active');
+            $('.custom-select').find('ul').stop().fadeOut(0);
+            $(this).siblings('ul').stop().fadeIn(0);
+        } else {
+            $('.custom-select').removeClass('active');
+            $('.custom-select').find('ul').stop().fadeOut(0);
         }
+
     });
 
     $('.custom-select ul li').click(function() {

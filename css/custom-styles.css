@@ -236,7 +236,6 @@ input[type='radio'], input[type='checkbox'] {
 
 .custom-select {
     position: relative;
-    cursor: pointer;
 }
 .custom-select ul {
     display: none;
@@ -257,6 +256,7 @@ input[type='radio'], input[type='checkbox'] {
 }
 .custom-select ul li, .header-select ul li {
     display: block;
+    cursor: pointer;
 }
 .custom-select ul li.chosen {
     opacity: 0.5;
@@ -281,6 +281,7 @@ input[type='radio'], input[type='checkbox'] {
     font-family: 'PTSansBold', sans-serif;
     font-size: 1.285714285714286em;
     line-height: 1;
+    cursor: pointer;
 }
 
 .custom-select-list .triangle, .header-select .triangle {
@@ -525,7 +526,7 @@ nav ul li a:hover {
 .header-bottom .categories li a {
     font-family: 'PTSansBold', sans-serif;
     font-size: 1.4em;
-    line-height: 1;
+    line-height: 1.4;
 }
 .header-bottom .categories li a:hover {
     color: #d46c14;
