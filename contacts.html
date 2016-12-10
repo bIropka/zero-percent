@@ -137,12 +137,14 @@
 
                 <div class="contentbar clearfix">
 
+                    <h1>Контакты</h1>
+
                     <div class="image-wrap">
                         <img src="source/images/office.jpg" alt="office">
                     </div>
 
                     <div class="address">
-
+                        Украина, Одесская область, <br>г. Одесса, ул. Пушкинская,<br>д. 64, кв. 77
                     </div>
 
                     <ul class="mails">
@@ -180,11 +182,27 @@
                             <input type="text" placeholder="Телефон">
                         </label>
 
-                        <label>
+                        <label class="textarea-wrap">
                             <textarea cols='' rows='' placeholder="Сообщение *"></textarea>
                         </label>
 
-                        <button type="submit,bl,k';m77o"></button>
+                        <button class="new-code">Новый код</button>
+
+                        <fieldset class="clearfix">
+
+                            <label class="code-wrap">
+                                <input type="text" placeholder="Код подтверждения *">
+                            </label>
+
+                            <div class="captcha">
+                                <img src="source/images/captcha.jpg" alt="captcha">
+                            </div>
+
+                        </fieldset>
+
+                        <p>* поля, обязательные для заполнения</p>
+
+                        <button type="submit" class="button-orange">Отправить собщение</button>
 
                     </form>
 
@@ -345,6 +363,9 @@
 </div>
 
 <script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jQRangeSlider-min.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/custom-scripts.js"></script>
 </body>
 </html>

@@ -2498,9 +2498,167 @@ fieldset {
     background: #f2f2f2;
 }
 
-    /**********************************************************************************************************************
-    ********** modals
-    ***********************************************************************************************************************/
+/**********************************************************************************************************************
+********** page contacts
+***********************************************************************************************************************/
+
+.page-contacts h1 {
+    line-height: 1;
+    margin-bottom: 15px;
+}
+.page-contacts .contentbar {
+    border: 1px solid #dddddd;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+    padding: 30px;
+    height: 660px;
+}
+.page-contacts .sidebar {
+    width: 30%;
+    border: 1px solid #dddddd;
+    border-left: none;
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    padding: 30px;
+    height: 660px;
+}
+.page-contacts .contentbar .image-wrap {
+    width: 95px;
+    height: 95px;
+    float: left;
+}
+.page-contacts .contentbar .address, .page-contacts .contentbar .mails, .page-contacts .contentbar .phones, .page-contacts .contentbar .on-map {
+    display: block;
+    float: left;
+}
+.page-contacts .contentbar .address {
+    width: 25%;
+    margin: 0 2%;
+}
+.page-contacts .contentbar .mails {
+    width: 20%;
+    margin-right: 6%;
+}
+.page-contacts .contentbar .phones {
+    width: 20%;
+    padding-left: 25px;
+    position: relative;
+}
+.page-contacts .contentbar .phones:before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: transparent url('../source/images/icon-phone-black.png');
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+.page-contacts .contentbar .mails li, .page-contacts .contentbar .phones li {
+    display: list-item;
+    margin-bottom: 15px;
+}
+.page-contacts .contentbar .mails li {
+    position: relative;
+    padding-left: 30px;
+}
+.page-contacts .contentbar .mails li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+}
+.page-contacts .contentbar .mails li:nth-child(1):before {
+    width: 18px;
+    height: 14px;
+    background: transparent url('../source/images/icon-email-black.png');
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.page-contacts .contentbar .mails li:nth-child(2):before {
+    background: transparent url('../source/images/icon-skype-black.png');
+    width: 21px;
+    height: 20px;
+    top: 0;
+}
+.page-contacts .contentbar .mails li:nth-child(3):before {
+    background: transparent url('../source/images/icon-icq-black.png');
+    width: 21px;
+    height: 22px;
+    top: 0;
+}
+.page-contacts .contentbar .phones li {
+    margin-bottom: 5px;
+}
+.page-contacts .contentbar .mails li:last-child, .page-contacts .contentbar .phones li:last-child {
+    margin-bottom: 0;
+}
+.page-contacts .contentbar .phones li a {
+    text-decoration: none;
+}
+.page-contacts .contentbar .on-map {
+    width: 100%;
+    height: 430px;
+    margin-top: 20px;
+}
+
+.page-contacts form label {
+    display: block;
+    width: 100%;
+    height: 43px;
+    margin-bottom: 20px;
+}
+.page-contacts form label input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #9f9f9f;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0 20px;
+}
+
+.page-contacts form .textarea-wrap {
+    height: 200px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.page-contacts form textarea {
+    padding: 10px 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.page-contacts form {
+    text-align: right;
+}
+.page-contacts form p {
+    text-align: center;
+}
+.page-contacts .code-wrap {
+    width: 60%;
+}
+.page-contacts .captcha {
+    width: 35%;
+    height: 43px;
+}
+.page-contacts form button[type='submit'] {
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
+/**********************************************************************************************************************
+********** modals
+***********************************************************************************************************************/
 
 .window {
     position: fixed;
@@ -2673,7 +2831,7 @@ fieldset {
     font-family: 'PTSansRegular', sans-serif;
 }
 
-.window-object-message button[type='submit'],.window-booking button[type='submit'] {
+.window-object-message button[type='submit'], .window-booking button[type='submit'] {
     display: block;
     width: 100%;
     height: 50px;
@@ -2872,6 +3030,26 @@ fieldset {
     .object-tabs-additional-reviews .sidebar .text {
         padding-left: 0;
         margin-right: 5px;
+    }
+    .page-contacts .contacts {
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .page-contacts .contentbar {
+        width: 100%;
+        height: auto;
+        float: none;
+        border: none;
+    }
+    .page-contacts .sidebar {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+        float: none;
+        border: none;
     }
 
 }
@@ -3143,6 +3321,21 @@ fieldset {
         width: 100%;
         margin-top: 15px;
     }
+    .page-contacts .contentbar .image-wrap {
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+    .page-contacts .contentbar .address {
+        width: auto;
+        float: none;
+        min-height: 95px;
+        margin-bottom: 30px;
+    }
+    .page-contacts .contentbar .mails, .page-contacts .contentbar .phones {
+        width: auto;
+        display: inline-block;
+        float: none;
+    }
 }
 
 
@@ -3334,6 +3527,18 @@ fieldset {
     .window-booking form {
         height: 920px;
     }
+    .page-contacts .contentbar .mails, .page-contacts .contentbar .phones {
+        width: 100%;
+    }
+    .page-contacts .contentbar .mails {
+        margin-bottom: 20px;
+    }
+    .page-contacts .sidebar form {
+        text-align: left;
+    }
+    .page-contacts .code-wrap {
+        width: 100%;
+    }
 }
 
 @media (max-width: 400px) {
@@ -3369,6 +3574,9 @@ fieldset {
     }
     .object-tabs-controls li {
         font-size: 0.7em;
+    }
+    .page-contacts .contentbar .address br {
+        display: none;
     }
 
 }
