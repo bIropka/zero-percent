@@ -1792,9 +1792,10 @@ footer[role='contentinfo'] .promo-text {
 
 .object-slider-dots {
     display: block;
+    width: 640px;
     margin-top: 14px;
 }
-.object-slider-dots li {
+.object-slider-dots .image-wrap {
     display: block;
     float: left;
     width: 90px;
@@ -1803,10 +1804,14 @@ footer[role='contentinfo'] .promo-text {
     border: 3px solid #c6c6c6;
     cursor: pointer;
 }
-.object-slider-dots li:last-child {
-    margin-right: 0;
+.object-slider-dots .image-wrap:focus {
+    outline: none;
 }
-.object-slider-dots li.active {
+.object-slider .slide:focus {
+    outline: none;
+    border: none;
+}
+.object-slider-dots .image-wrap.slick-current {
     border: 3px solid #fc7214;
 }
 .object-slider-dots .image-wrap img {
@@ -1819,6 +1824,44 @@ footer[role='contentinfo'] .promo-text {
     overflow: hidden;
 }
 
+.photos-controls {
+    width: 140px;
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+}
+.photos-controls .photos-control {
+    display: block;
+    width: 15px;
+    height: 26px;
+    background: transparent url('../source/images/sprite-slider-orange.png');
+    float: left;
+    margin-top: 3px;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    position: relative;
+}
+.photos-controls .photos-control-left {
+    background-position: left top;
+    margin-right: 12px;
+}
+.photos-controls .photos-control-right {
+    background-position: right top;
+    margin-right: 16px;
+}
+.photos-controls p {
+    line-height: 1;
+}
+.photos-controls .photos-control-left:active {
+    left: -3px;
+}
+.photos-controls .photos-control-right:active {
+    right: -3px;
+}
 /* object tabs booking */
 
 .object-tabs-booking {
@@ -1971,6 +2014,27 @@ footer[role='contentinfo'] .promo-text {
 .sidebar .product-cost {
     font-size: 2.5em;
     margin: 10px 0;
+    vertical-align: bottom;
+}
+.product-cost .custom-select-list, .sidebar .product-cost .custom-select-list .current-value {
+    font-size: inherit;
+    line-height: 1.4;
+    vertical-align: bottom;
+}
+.product-cost .custom-select-list .triangle {
+    border-top: 7px solid #000000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    right: 0;
+    top: 24px;
+}
+.product-cost .custom-select-list.active .triangle {
+    border-bottom: 7px solid #000000;
+    border-top: none;
+}
+.product-cost .custom-select-list ul {
+    left: 0;
+    text-align: left;
 }
 
 .to-booking {
@@ -2902,6 +2966,12 @@ article img {
         max-height: 77px;
         text-align: left;
     }
+    .object-slider-dots {
+        width: 520px;
+    }
+    .product-cost .custom-select-list .triangle {
+        top: 22px;
+    }
 }
 
 @media (max-width: 1180px) {
@@ -3075,6 +3145,9 @@ article img {
         float: none;
         border: none;
     }
+    .object-slider-dots {
+        width: 400px;
+    }
 
 }
 
@@ -3165,6 +3238,9 @@ article img {
     }
     .object-tabs-video.tab {
         height: 350px;
+    }
+    .object-slider-dots {
+        width: 520px;
     }
 }
 
@@ -3291,9 +3367,8 @@ article img {
     .filters .filter-cost-mobile {
         display: block;
     }
-    .object-slider-dots li {
-        width: 45px;
-        height: 45px;
+    .object-slider-dots {
+        width: 300px;
     }
     .object-tabs-controls li {
         height: 35px;
@@ -3359,6 +3434,18 @@ article img {
         width: auto;
         display: inline-block;
         float: none;
+    }
+
+}
+
+@media (max-width: 540px) {
+    .photos-controls {
+        width: 100px;
+        bottom: 20px;
+        right: 0;
+    }
+    .photos-control {
+        margin: 0 0 10px;
     }
 }
 
@@ -3477,7 +3564,7 @@ article img {
         margin-left: 0!important;
         margin-top: 10px;
     }
-    .object-slider-dots {
+    .object-slider-dots, .photos-controls {
         display: none;
     }
     .object-tabs {

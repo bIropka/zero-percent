@@ -28,19 +28,7 @@ $(document).ready(function () {
         $('.slider').animate({opacity: 1});
     }, 500);
 
-    if ($(window).width() < '1231'){
-        
-    } else {
-        
-    }
-
-    $(window).resize(function(){
-        if ($(window).width() < '1231'){
-            
-        } else {
-            
-        }
-    });
+    $('.photos-controls .photos-amount').html($('.object-slider .slide').length);
 
     /******************************************************************************************************************
      ******* custom select scripts
@@ -194,23 +182,49 @@ $(document).ready(function () {
         dots: true
     });
 
-    $('.object-slider').slick();
-
-    $('.object-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-
-        $('.object-slider-dots .active').removeClass('active');
-        $('.object-slider-dots li').eq(nextSlide).addClass('active');
-        
+    $('.object-slider').slick({
+        asNavFor: '.object-slider-dots',
+        speed: 600
     });
 
-    $('.object-slider-dots li').click(function() {
+    $('.object-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $('.photos-controls .current-photo').html(nextSlide  + 1);
+    });
 
-        $('.object-slider-dots .active').removeClass('active');
-        $(this).addClass('active');
 
-        var index = $(this).index();
-        $('.object-slider').slick('slickGoTo', index);
-
+    $('.object-slider-dots').slick({
+        slidesToShow: 6,
+        appendArrows: '.photos-control',
+        prevArrow: '.photos-control-left',
+        speed: 600,
+        nextArrow: '.photos-control-right',
+        asNavFor: '.object-slider',
+        responsive: [
+            {
+                breakpoint: 1231,
+                settings: {
+                    slidesToShow: 5
+                }
+            },
+            {
+                breakpoint: 1081,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 981,
+                settings: {
+                    slidesToShow: 5
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 3
+                }
+            }
+        ]
     });
 
     $('.slider-calendar').slick({
