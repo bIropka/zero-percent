@@ -3226,10 +3226,6 @@ article img {
     overflow: auto;
 }
 
-.window-choose-city {
-    display: block;
-}
-
 .window form,
 .window-inner {
     display: block;
